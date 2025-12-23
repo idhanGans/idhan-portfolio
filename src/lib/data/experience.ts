@@ -1,0 +1,57 @@
+export const experiences = [
+  {
+    title: "Senior Front End Developer",
+    company: "Tech Innovations Inc.",
+    location: "Jakarta, Indonesia",
+    period: "2023 - Present",
+    current: true,
+    description: [
+      "Lead the frontend development team in building a next-generation SaaS platform serving 100K+ users",
+      "Architected and implemented a micro-frontend solution reducing deployment time by 60%",
+      "Established code review processes and mentored junior developers on best practices",
+      "Collaborated with design team to create a cohesive design system used across all products",
+    ],
+    technologies: ["React", "Next.js", "TypeScript", "GraphQL", "AWS"],
+  },
+  {
+    title: "Front End Developer",
+    company: "Digital Agency Co.",
+    location: "Bandung, Indonesia",
+    period: "2021 - 2023",
+    current: false,
+    description: [
+      "Developed responsive web applications for diverse clients in e-commerce and fintech sectors",
+      "Implemented complex animations and interactive features using Framer Motion and GSAP",
+      "Optimized website performance achieving 95+ Lighthouse scores across all metrics",
+      "Built reusable component libraries reducing development time by 40%",
+    ],
+    technologies: ["Vue.js", "React", "TailwindCSS", "Node.js", "MongoDB"],
+  },
+  {
+    title: "Junior Web Developer",
+    company: "Startup Hub",
+    location: "Yogyakarta, Indonesia",
+    period: "2019 - 2021",
+    current: false,
+    description: [
+      "Built and maintained multiple client websites using modern JavaScript frameworks",
+      "Collaborated with backend team to integrate RESTful APIs and third-party services",
+      "Participated in agile development processes including daily standups and sprint planning",
+      "Contributed to open-source projects and internal developer tools",
+    ],
+    technologies: ["JavaScript", "React", "CSS3", "Git", "Firebase"],
+  },
+  {
+    title: "Web Development Intern",
+    company: "CodeLab Academy",
+    location: "Remote",
+    period: "2018 - 2019",
+    current: false,
+    description: [
+      "Completed intensive training program covering full-stack web development",
+      "Built portfolio projects demonstrating proficiency in frontend technologies",
+      "Participated in hackathons and coding challenges to enhance problem-solving skills",
+    ],
+    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+  },
+];
