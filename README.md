@@ -23,38 +23,84 @@ An interactive portfolio website built with Next.js, React Three Fiber, and Fram
 ## 📁 Project Structure
 
 ```
-src/
-├── app/                    # Next.js App Router pages
-│   ├── about/
-│   ├── contact/
-│   ├── experience/
-│   ├── playground/
-│   ├── projects/
-│   ├── skills/
-│   ├── layout.tsx
-│   ├── page.tsx
-│   ├── not-found.tsx
-│   ├── loading.tsx
-│   └── error.tsx
-├── components/
-│   ├── three/              # 3D components
-│   │   ├── Nebula.tsx
-│   │   ├── StarField.tsx
-│   │   ├── CameraController.tsx
-│   │   └── Scene.tsx
-│   └── ui/                 # UI components
-│       ├── Navigation.tsx
-│       ├── Footer.tsx
-│       ├── SkillCard.tsx
-│       ├── ProjectCard.tsx
-│       └── ...
-├── hooks/                  # Custom React hooks
-├── lib/
-│   ├── data/               # Static data (skills, projects, etc.)
-│   └── utils.ts            # Utility functions
-└── shaders/                # GLSL shader files
-    ├── nebula/
-    └── stars/
+├── next-env.d.ts
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+├── public/
+│   ├── robots.txt
+│   └── site.webmanifest
+└── src/
+    ├── app/                    # Next.js App Router pages
+    │   ├── about/
+    │   │   ├── layout.tsx
+    │   │   └── page.tsx
+    │   ├── contact/
+    │   │   ├── layout.tsx
+    │   │   └── page.tsx
+    │   ├── experience/
+    │   │   ├── layout.tsx
+    │   │   └── page.tsx
+    │   ├── playground/
+    │   │   ├── layout.tsx
+    │   │   └── page.tsx
+    │   ├── projects/
+    │   │   ├── layout.tsx
+    │   │   └── page.tsx
+    │   ├── skills/
+    │   │   ├── layout.tsx
+    │   │   └── page.tsx
+    │   ├── error.tsx
+    │   ├── globals.css
+    │   ├── layout.tsx
+    │   ├── loading.tsx
+    │   ├── not-found.tsx
+    │   ├── page.tsx
+    │   └── sitemap.ts
+    ├── components/
+    │   ├── providers/          # Context providers
+    │   │   ├── index.ts
+    │   │   └── SmoothScrollProvider.tsx
+    │   ├── three/              # 3D components
+    │   │   ├── CameraController.tsx
+    │   │   ├── Nebula.tsx
+    │   │   ├── Scene.tsx
+    │   │   ├── StarField.tsx
+    │   │   └── index.ts
+    │   └── ui/                 # UI components
+    │       ├── Button.tsx
+    │       ├── ExperienceCard.tsx
+    │       ├── Footer.tsx
+    │       ├── Navigation.tsx
+    │       ├── PageTransition.tsx
+    │       ├── ProjectCard.tsx
+    │       ├── SectionHeading.tsx
+    │       ├── SkillCard.tsx
+    │       └── index.ts
+    ├── hooks/                  # Custom React hooks
+    │   ├── index.ts
+    │   ├── useMediaQuery.ts
+    │   ├── useMousePosition.ts
+    │   ├── useScrollProgress.ts
+    │   └── useWindowSize.ts
+    ├── lib/
+    │   ├── data/               # Static data
+    │   │   ├── experience.ts
+    │   │   ├── index.ts
+    │   │   ├── projects.ts
+    │   │   └── skills.ts
+    │   └── utils.ts            # Utility functions
+    ├── shaders/                # GLSL shader files
+    │   ├── nebula/
+    │   │   ├── fragment.glsl
+    │   │   └── vertex.glsl
+    │   └── stars/
+    │       ├── fragment.glsl
+    │       └── vertex.glsl
+    └── types/                  # TypeScript type definitions
+        └── glsl.d.ts
 ```
 
 ## 🏃‍♂️ Getting Started
