@@ -31,12 +31,12 @@ const socialLinks = [
   {
     icon: FiGithub,
     label: "GitHub",
-    href: "https://github.com/idhanzarkasyah",
+    href: "https://github.com/idhanGans",
   },
   {
     icon: FiLinkedin,
     label: "LinkedIn",
-    href: "https://linkedin.com/in/idhanzarkasyah",
+    href: "https://www.linkedin.com/in/idhan-zarkasyah-225b42261/",
   },
   {
     icon: FiTwitter,

@@ -69,7 +69,7 @@ src/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/idhanzarkasyah/portfolio.git
+git clone https://github.com/idhanGans/portfolio.git
 cd portfolio
 ```
 
@@ -133,5 +133,5 @@ MIT License - feel free to use this as a template for your own portfolio.
 **Idhan Zarkasyah**
 
 - Website: [idhanzarkasyah.com](https://idhanzarkasyah.com)
-- GitHub: [@idhanzarkasyah](https://github.com/idhanzarkasyah)
-- LinkedIn: [Idhan Zarkasyah](https://linkedin.com/in/idhanzarkasyah)
+- GitHub: [@idhanzarkasyah](https://github.com/idhanGans)
+- LinkedIn: [Idhan Zarkasyah](https://www.linkedin.com/in/idhan-zarkasyah-225b42261/)

@@ -22,12 +22,12 @@ const footerLinks = {
   social: [
     {
       name: "GitHub",
-      href: "https://github.com/idhanzarkasyah",
+      href: "https://github.com/idhanGans",
       icon: FiGithub,
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/idhanzarkasyah",
+      href: "https://www.linkedin.com/in/idhan-zarkasyah-225b42261/",
       icon: FiLinkedin,
     },
     {

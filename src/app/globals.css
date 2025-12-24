@@ -63,17 +63,7 @@
   }
 
   .text-gradient-animated {
-    @apply bg-clip-text text-transparent;
-    background: linear-gradient(
-      90deg,
-      #ffffff 0%,
-      #c0c0c0 25%,
-      #ffffff 50%,
-      #c0c0c0 75%,
-      #ffffff 100%
-    );
-    background-size: 200% auto;
-    animation: gradient 8s linear infinite;
+    @apply text-white;
   }
 
   .glow-text {
