@@ -3,29 +3,23 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FiArrowRight,
-  FiDownload,
-  FiMapPin,
-  FiCalendar,
-  FiCode,
-} from "react-icons/fi";
+import { FiArrowRight, FiMapPin, FiCalendar, FiCode } from "react-icons/fi";
 import { Button, SectionHeading } from "@/components/ui";
 
 const stats = [
-  { label: "Years Experience", value: "5+" },
-  { label: "Projects Completed", value: "50+" },
-  { label: "Happy Clients", value: "30+" },
+  { label: "Years of Experience", value: "7+" },
+  { label: "Leadership Track", value: "Deputy CEO" },
+  { label: "Full-Stack View", value: "Op. to Tech" },
   { label: "Technologies", value: "20+" },
 ];
 
 const interests = [
-  "Creative Coding",
-  "WebGL & Shaders",
+  "Strategic Operations",
+  "Frontend Development",
+  "React.js & Next.js",
+  "Business-Tech Integration",
   "UI/UX Design",
-  "Open Source",
-  "Performance Optimization",
-  "Design Systems",
+  "Generative Art",
 ];
 
 export default function AboutPage() {
@@ -41,7 +35,7 @@ export default function AboutPage() {
           >
             <SectionHeading
               subtitle="About Me"
-              title="The Story Behind the Code"
+              title="Strategy Meets Code"
               align="left"
             />
           </motion.div>
@@ -115,29 +109,34 @@ export default function AboutPage() {
             >
               <div className="prose prose-invert max-w-none">
                 <p className="text-xl text-accent leading-relaxed mb-6">
-                  I&apos;m a Front End Developer with over 5 years of experience
-                  building web applications that combine beautiful design with
-                  exceptional user experience.
+                  I am Idhan Zarkasyah. I thrive at the intersection of
+                  high-level business strategy and modern technical execution.
                 </p>
 
                 <p className="text-accent-dim leading-relaxed mb-6">
-                  My journey in web development started when I was fascinated by
-                  how websites could create immersive experiences. Since then,
-                  I&apos;ve been dedicated to mastering the craft of building
-                  interactive, performant, and accessible web applications.
+                  My professional foundation was forged in the Food and
+                  Beverages industry, where I transitioned from managing daily
+                  operations to serving as Deputy CEO at Start Up Company. This
+                  journey has given me a rare full-cycle perspective—from
+                  designing optimized layouts to architecting company-wide
+                  growth strategies.
                 </p>
 
                 <p className="text-accent-dim leading-relaxed mb-6">
-                  I specialize in React ecosystem, particularly Next.js, and
-                  have a strong passion for creative coding using Three.js and
-                  WebGL. I believe that the best digital products are born from
-                  the intersection of solid engineering and thoughtful design.
+                  Driven by a passion for technology, I am currently leveraging
+                  my problem-solving and strategic planning skills as a Junior
+                  Web Developer specializing in the Front-End. My approach to
+                  development is unique: I do not just write code; I build
+                  solutions that are technically robust and perfectly aligned
+                  with core business objectives and operational efficiency.
                 </p>
 
                 <p className="text-accent-dim leading-relaxed mb-8">
-                  When I&apos;m not coding, you can find me exploring new design
-                  trends, contributing to open-source projects, or experimenting
-                  with generative art and creative coding experiments.
+                  Whether you need a developer who understands the bottom line
+                  or a strategist who can speak the language of tech, I am ready
+                  to deliver. My experience covers the full cycle from
+                  operational processes to executive leadership, now integrated
+                  with modern development techniques.
                 </p>
               </div>
 
@@ -183,11 +182,6 @@ export default function AboutPage() {
                     Let&apos;s Work Together
                   </Button>
                 </Link>
-                <a href="/resume.pdf" download>
-                  <Button variant="secondary" icon={<FiDownload size={16} />}>
-                    Download Resume
-                  </Button>
-                </a>
               </div>
             </motion.div>
           </div>
@@ -206,34 +200,34 @@ export default function AboutPage() {
               className="text-center"
             >
               <span className="text-accent text-sm font-mono uppercase tracking-widest mb-3 block">
-                My Philosophy
+                Professional Capabilities
               </span>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-                Code is Poetry, Design is Emotion
+                Full-Cycle Expertise: From Operations to Technology
               </h2>
               <p className="text-accent-dim text-lg leading-relaxed mb-8">
-                I believe that great software is not just about
-                functionality—it&apos;s about creating experiences that resonate
-                with users. Every line of code I write is crafted with
-                intention, every animation is designed to delight, and every
-                interaction is optimized for seamless user experience.
+                My unique value proposition comes from understanding both sides
+                of business—the operational reality that makes companies run and
+                the technical innovation that drives competitive advantage. I
+                combine strategic thinking with hands-on development to create
+                solutions that work.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
                   {
-                    title: "User-Centric",
+                    title: "Junior Web Developer",
                     description:
-                      "Every decision starts with understanding user needs and behaviors.",
+                      "High-performance UI with React.js, AI tool integration, and optimized code development.",
                   },
                   {
-                    title: "Performance First",
+                    title: "Strategic Operations",
                     description:
-                      "Fast, responsive applications that work flawlessly on any device.",
+                      "Executive liaison skills, inventory management, cost optimization, and project innovation.",
                   },
                   {
-                    title: "Continuous Learning",
+                    title: "Business Intelligence",
                     description:
-                      "Staying ahead of trends while mastering the fundamentals.",
+                      "Financial planning, HR guidance, data analysis, and operational efficiency optimization.",
                   },
                 ].map((item, index) => (
                   <motion.div

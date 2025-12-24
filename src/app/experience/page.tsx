@@ -178,9 +178,6 @@ export default function ExperiencePage() {
               <Link href="/contact">
                 <Button icon={<FiArrowRight size={16} />}>Get In Touch</Button>
               </Link>
-              <a href="/resume.pdf" download>
-                <Button variant="secondary">Download Resume</Button>
-              </a>
             </div>
           </motion.div>
         </div>

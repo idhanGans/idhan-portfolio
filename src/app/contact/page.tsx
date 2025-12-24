@@ -2,13 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FiSend,
-  FiMail,
-  FiMapPin,
-  FiGithub,
-  FiLinkedin,
-} from "react-icons/fi";
+import { FiSend, FiMail, FiMapPin, FiGithub, FiLinkedin } from "react-icons/fi";
 import { SectionHeading, Button } from "@/components/ui";
 
 const contactInfo = [

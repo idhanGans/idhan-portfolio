@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FiArrowRight, FiDownload, FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiArrowRight, FiGithub, FiLinkedin } from "react-icons/fi";
 import {
   Button,
   SectionHeading,
@@ -124,16 +124,6 @@ export default function HomePage() {
                 className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent hover:text-white hover:border-white/20 transition-colors"
               >
                 <FiLinkedin size={20} />
-              </motion.a>
-              <motion.a
-                href="/resume.pdf"
-                download
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="h-12 px-5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2 text-accent hover:text-white hover:border-white/20 transition-colors text-sm font-medium"
-              >
-                <FiDownload size={16} />
-                Resume
               </motion.a>
             </motion.div>
           </motion.div>
