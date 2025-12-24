@@ -179,5 +179,5 @@ MIT License - feel free to use this as a template for your own portfolio.
 **Idhan Zarkasyah**
 
 - Website: [idhanzarkasyah.com](https://idhanzarkasyah.com)
-- GitHub: [@idhanzarkasyah](https://github.com/idhanGans)
+- GitHub: [@idhanGans](https://github.com/idhanGans)
 - LinkedIn: [Idhan Zarkasyah](https://www.linkedin.com/in/idhan-zarkasyah-225b42261/)
