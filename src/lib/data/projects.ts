@@ -1,29 +1,29 @@
 export const projects = [
   {
     id: "ecommerce-platform",
-    title: "E-Commerce Platform",
+    title: "Modern Clothing E-Commerce",
     description:
-      "A full-featured e-commerce platform with real-time inventory management, secure payment processing, and an intuitive admin dashboard. Built with performance and scalability in mind.",
+      "A sophisticated fashion e-commerce platform featuring advanced product filtering, dynamic shopping cart, secure Stripe payment integration, and real-time inventory management. Includes user authentication, order tracking, wishlist functionality, and a responsive design optimized for seamless shopping across all devices.",
     image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop",
-    tags: ["Next.js", "TypeScript", "Stripe", "Supabase", "TailwindCSS"],
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=800&fit=crop&q=80",
+    tags: ["Next.js", "TypeScript", "Stripe", "Prisma", "TailwindCSS", "NextAuth"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/idhanGans",
     featured: true,
     category: "fullstack",
   },
   {
-    id: "portfolio-generator",
-    title: "Portfolio Generator",
+    id: "hr-dashboard",
+    title: "HR Management Dashboard",
     description:
-      "A SaaS application that helps developers create stunning portfolio websites in minutes. Features customizable themes and real-time preview.",
+      "A comprehensive HR dashboard for managing employees, tracking attendance, monitoring performance metrics, and handling payroll. Features real-time analytics, employee self-service portal, and automated reporting with interactive data visualizations.",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-    tags: ["React", "Node.js", "MongoDB", "Framer Motion"],
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=800&fit=crop&q=80",
+    tags: ["React", "Node.js", "PostgreSQL", "Chart.js", "TailwindCSS"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/idhanGans",
     featured: false,
-    category: "frontend",
+    category: "fullstack",
   },
   {
     id: "task-management",
