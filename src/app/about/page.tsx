@@ -57,7 +57,7 @@ export default function AboutPage() {
                 {/* Main Image */}
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-secondary border border-white/10">
                   <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop&crop=face"
+                    src="/idhan-profile.jpg"
                     alt="Idhan Zarkasyah"
                     fill
                     className="object-cover"
