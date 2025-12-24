@@ -74,7 +74,6 @@ export const metadata: Metadata = {
     title: "Idhan Zarkasyah — Front End Developer",
     description:
       "Front End Developer specializing in React, Next.js, and creative web experiences.",
-    creator: "@idhanzarkasyah",
     images: ["/og-image.png"],
   },
   robots: {

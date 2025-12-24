@@ -16,8 +16,8 @@ const contactInfo = [
   {
     icon: FiMail,
     label: "Email",
-    value: "hello@idhanzarkasyah.com",
-    href: "mailto:hello@idhanzarkasyah.com",
+    value: "idhan.arbeitsplatz@gmail.com",
+    href: "mailto:idhan.arbeitsplatz@gmail.com",
   },
   {
     icon: FiMapPin,

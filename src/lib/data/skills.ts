@@ -16,6 +16,10 @@ import {
   SiNetlify,
   SiFigma,
   SiCss3,
+  SiTrello,
+  SiNotion,
+  SiGooglesheets,
+  SiLooker,
 } from "react-icons/si";
 
 export const skills = [
@@ -148,6 +152,35 @@ export const skills = [
     color: "#F24E1E",
     category: "design",
   },
+  {
+    name: "Trello",
+    description: "Project management and task organization tool.",
+    icon: SiTrello,
+    color: "#0052CC",
+    category: "tools",
+  },
+  {
+    name: "Notion",
+    description:
+      "All-in-one workspace for notes, databases, and documentation.",
+    icon: SiNotion,
+    color: "#ffffff",
+    category: "tools",
+  },
+  {
+    name: "Google Workspace",
+    description: "Collaborative suite including Docs, Sheets, and Drive.",
+    icon: SiGooglesheets,
+    color: "#34A853",
+    category: "tools",
+  },
+  {
+    name: "Google Looker Studio",
+    description: "Data visualization and business intelligence dashboards.",
+    icon: SiLooker,
+    color: "#EA4335",
+    category: "tools",
+  },
 ];
 
 export const skillCategories = [
@@ -157,4 +190,5 @@ export const skillCategories = [
   { id: "database", name: "Database" },
   { id: "deployment", name: "Deployment" },
   { id: "design", name: "Design" },
+  { id: "tools", name: "Tools" },
 ];

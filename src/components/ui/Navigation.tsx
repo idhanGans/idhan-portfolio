@@ -9,7 +9,6 @@ import { HiMenuAlt4, HiX } from "react-icons/hi";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Skills", href: "/skills" },
   { name: "Projects", href: "/projects" },
   { name: "Experience", href: "/experience" },
   { name: "Contact", href: "/contact" },

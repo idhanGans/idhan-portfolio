@@ -35,22 +35,21 @@ const itemVariants = {
 };
 
 export default function HomePage() {
-  const featuredProjects = projects.filter((p) => p.featured).slice(0, 2);
-  const featuredSkills = skills.slice(0, 8);
+  const featuredProjects = projects.slice(0, 4);
 
   return (
     <>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="section-container py-32">
+        <div className="section-container py-15">
           <motion.div
             variants={heroVariants}
             initial="hidden"
             animate="visible"
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-6xl mx-auto text-center"
           >
             {/* Badge */}
-            <motion.div variants={itemVariants} className="mb-6">
+            <motion.div variants={itemVariants} className="mb-4">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-accent">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                 Available for new projects
@@ -60,7 +59,7 @@ export default function HomePage() {
             {/* Main Heading */}
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-4"
             >
               Hi, I&apos;m{" "}
               <span className="text-gradient-animated">Idhan Zarkasyah</span>
@@ -69,7 +68,7 @@ export default function HomePage() {
             {/* Subtitle */}
             <motion.p
               variants={itemVariants}
-              className="text-xl md:text-2xl text-accent mb-4"
+              className="text-xl md:text-2xl text-accent mb-3"
             >
               Front End Developer & Creative Technologist
             </motion.p>
@@ -77,7 +76,7 @@ export default function HomePage() {
             {/* Description */}
             <motion.p
               variants={itemVariants}
-              className="text-accent-dim text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+              className="text-accent-dim text-lg max-w-2xl mx-auto mb-8 leading-relaxed"
             >
               I craft immersive digital experiences through creative coding,
               interactive design, and cutting-edge web technologies.
@@ -87,7 +86,7 @@ export default function HomePage() {
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
             >
               <Link href="/projects">
                 <Button size="lg" icon={<FiArrowRight size={18} />}>
@@ -161,28 +160,23 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Featured Skills Section */}
+      {/* Skills Section */}
       <section className="py-24 lg:py-32">
         <div className="section-container">
           <SectionHeading
             subtitle="Tech Stack"
             title="Skills & Technologies"
-            description="A curated set of technologies I use to build modern, performant, and scalable web applications."
+            description="A comprehensive toolkit of technologies I use to build modern, performant, and scalable web applications."
           />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mb-12">
-            {featuredSkills.map((skill, index) => (
+          <motion.div
+            layout
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-3 lg:gap-4"
+          >
+            {skills.map((skill, index) => (
               <SkillCard key={skill.name} {...skill} index={index} />
             ))}
-          </div>
-
-          <div className="text-center">
-            <Link href="/skills">
-              <Button variant="outline" icon={<FiArrowRight size={16} />}>
-                View All Skills
-              </Button>
-            </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -192,7 +186,7 @@ export default function HomePage() {
       </div>
 
       {/* Featured Projects Section */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 lg:py-20">
         <div className="section-container">
           <SectionHeading
             subtitle="Portfolio"
@@ -200,7 +194,7 @@ export default function HomePage() {
             description="Selected work that showcases my expertise in building complex, user-centric web applications."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2 lg:gap-3 mb-8">
             {featuredProjects.map((project, index) => (
               <ProjectCard key={project.id} {...project} index={index} />
             ))}
@@ -246,9 +240,9 @@ export default function HomePage() {
                   Start a Project
                 </Button>
               </Link>
-              <a href="mailto:hello@idhanzarkasyah.com">
+              <a href="mailto:idhan.arbeitsplatz@gmail.com">
                 <Button variant="ghost" size="lg">
-                  hello@idhanzarkasyah.com
+                  idhan.arbeitsplatz@gmail.com
                 </Button>
               </a>
             </div>

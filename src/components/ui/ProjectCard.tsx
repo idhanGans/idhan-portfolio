@@ -33,11 +33,11 @@ export default function ProjectCard({
       transition={{ delay: index * 0.1, duration: 0.6 }}
       className={`group relative ${featured ? "md:col-span-2" : ""}`}
     >
-      <div className="relative rounded-2xl overflow-hidden bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-500">
+      <div className="relative rounded-xl overflow-hidden bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-500">
         {/* Image Container */}
         <div
           className={`relative overflow-hidden ${
-            featured ? "aspect-[2/1]" : "aspect-video"
+            featured ? "aspect-[16/9]" : "aspect-[4/3]"
           }`}
         >
           <Image
@@ -88,11 +88,11 @@ export default function ProjectCard({
         </div>
 
         {/* Content */}
-        <div className="p-6">
-          <h3 className="text-xl font-display font-semibold text-white mb-2 group-hover:text-accent-silver transition-colors">
+        <div className="p-3">
+          <h3 className="text-base font-display font-semibold text-white mb-1 group-hover:text-accent-silver transition-colors">
             {title}
           </h3>
-          <p className="text-accent-dim text-sm leading-relaxed mb-4 line-clamp-2">
+          <p className="text-accent-dim text-xs leading-relaxed mb-2 line-clamp-2">
             {description}
           </p>
 

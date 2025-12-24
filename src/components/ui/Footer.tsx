@@ -2,19 +2,12 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  FiGithub,
-  FiLinkedin,
-  FiTwitter,
-  FiMail,
-  FiArrowUpRight,
-} from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiArrowUpRight } from "react-icons/fi";
 
 const footerLinks = {
   navigation: [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Skills", href: "/skills" },
     { name: "Projects", href: "/projects" },
     { name: "Experience", href: "/experience" },
     { name: "Contact", href: "/contact" },
@@ -31,11 +24,10 @@ const footerLinks = {
       icon: FiLinkedin,
     },
     {
-      name: "Twitter",
-      href: "https://twitter.com/idhanzarkasyah",
-      icon: FiTwitter,
+      name: "Email",
+      href: "mailto:idhan.arbeitsplatz@gmail.com",
+      icon: FiMail,
     },
-    { name: "Email", href: "mailto:hello@idhanzarkasyah.com", icon: FiMail },
   ],
 };
 
@@ -122,10 +114,10 @@ export default function Footer() {
                 Available for freelance projects and full-time opportunities.
               </p>
               <a
-                href="mailto:hello@idhanzarkasyah.com"
+                href="mailto:idhan.arbeitsplatz@gmail.com"
                 className="text-white font-medium hover:text-accent-silver transition-colors"
               >
-                hello@idhanzarkasyah.com
+                idhan.arbeitsplatz@gmail.com
               </a>
               <div className="pt-4">
                 <Link href="/contact">
