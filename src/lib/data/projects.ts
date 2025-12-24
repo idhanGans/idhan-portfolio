@@ -6,7 +6,14 @@ export const projects = [
       "A sophisticated fashion e-commerce platform featuring advanced product filtering, dynamic shopping cart, secure Stripe payment integration, and real-time inventory management. Includes user authentication, order tracking, wishlist functionality, and a responsive design optimized for seamless shopping across all devices.",
     image:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=800&fit=crop&q=80",
-    tags: ["Next.js", "TypeScript", "Stripe", "Prisma", "TailwindCSS", "NextAuth"],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Stripe",
+      "Prisma",
+      "TailwindCSS",
+      "NextAuth",
+    ],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/idhanGans",
     featured: true,
