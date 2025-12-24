@@ -8,7 +8,6 @@ import {
   FiMapPin,
   FiGithub,
   FiLinkedin,
-  FiTwitter,
 } from "react-icons/fi";
 import { SectionHeading, Button } from "@/components/ui";
 
@@ -37,11 +36,6 @@ const socialLinks = [
     icon: FiLinkedin,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/idhan-zarkasyah-225b42261/",
-  },
-  {
-    icon: FiTwitter,
-    label: "Twitter",
-    href: "https://twitter.com/idhanzarkasyah",
   },
 ];
 
