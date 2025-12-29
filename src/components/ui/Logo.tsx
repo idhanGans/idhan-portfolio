@@ -32,13 +32,7 @@ export default function Logo({
       {...props}
     >
       <defs>
-        <linearGradient
-          id="logoGradient"
-          x1="0%"
-          y1="0%"
-          x2="100%"
-          y2="100%"
-        >
+        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#ffffff" stopOpacity="0.5" />
           <stop offset="100%" stopColor="#ffffff" stopOpacity="0.2" />
         </linearGradient>
@@ -83,11 +77,46 @@ export default function Logo({
 
       {/* Gear/Settings icon - right */}
       <g opacity="0.5" filter="url(#glow)">
-        <circle cx="130" cy="70" r="3" fill="none" stroke="#ffffff" strokeWidth="1" />
-        <line x1="126" y1="70" x2="124" y2="70" stroke="#ffffff" strokeWidth="1" />
-        <line x1="134" y1="70" x2="136" y2="70" stroke="#ffffff" strokeWidth="1" />
-        <line x1="130" y1="66" x2="130" y2="64" stroke="#ffffff" strokeWidth="1" />
-        <line x1="130" y1="76" x2="130" y2="78" stroke="#ffffff" strokeWidth="1" />
+        <circle
+          cx="130"
+          cy="70"
+          r="3"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="1"
+        />
+        <line
+          x1="126"
+          y1="70"
+          x2="124"
+          y2="70"
+          stroke="#ffffff"
+          strokeWidth="1"
+        />
+        <line
+          x1="134"
+          y1="70"
+          x2="136"
+          y2="70"
+          stroke="#ffffff"
+          strokeWidth="1"
+        />
+        <line
+          x1="130"
+          y1="66"
+          x2="130"
+          y2="64"
+          stroke="#ffffff"
+          strokeWidth="1"
+        />
+        <line
+          x1="130"
+          y1="76"
+          x2="130"
+          y2="78"
+          stroke="#ffffff"
+          strokeWidth="1"
+        />
       </g>
 
       {/* Code bracket icon - bottom right */}
@@ -103,7 +132,15 @@ export default function Logo({
 
       {/* Database/Stack icon - bottom */}
       <g opacity="0.5" filter="url(#glow)">
-        <ellipse cx="70" cy="128" rx="4" ry="2" fill="none" stroke="#ffffff" strokeWidth="1" />
+        <ellipse
+          cx="70"
+          cy="128"
+          rx="4"
+          ry="2"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="1"
+        />
         <path
           d="M 66 128 L 66 125 Q 70 126 74 125 L 74 128"
           stroke="#ffffff"
@@ -125,9 +162,31 @@ export default function Logo({
 
       {/* Terminal/Dev icon - left */}
       <g opacity="0.5" filter="url(#glow)">
-        <rect x="12" y="65" width="10" height="10" fill="none" stroke="#ffffff" strokeWidth="1" />
-        <line x1="14" y1="68" x2="18" y2="68" stroke="#ffffff" strokeWidth="1" />
-        <line x1="14" y1="72" x2="20" y2="72" stroke="#ffffff" strokeWidth="1" />
+        <rect
+          x="12"
+          y="65"
+          width="10"
+          height="10"
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="1"
+        />
+        <line
+          x1="14"
+          y1="68"
+          x2="18"
+          y2="68"
+          stroke="#ffffff"
+          strokeWidth="1"
+        />
+        <line
+          x1="14"
+          y1="72"
+          x2="20"
+          y2="72"
+          stroke="#ffffff"
+          strokeWidth="1"
+        />
       </g>
 
       {/* Triangle/Arrow icon - top left */}
@@ -166,7 +225,15 @@ export default function Logo({
       </text>
 
       {/* Subtle decorative elements under IZ */}
-      <line x1="48" y1="88" x2="92" y2="88" stroke="#ffffff" strokeWidth="1" opacity="0.3" />
+      <line
+        x1="48"
+        y1="88"
+        x2="92"
+        y2="88"
+        stroke="#ffffff"
+        strokeWidth="1"
+        opacity="0.3"
+      />
     </svg>
   );
 
@@ -197,7 +264,9 @@ export default function Logo({
             <p className="text-white font-tech text-base tracking-wider leading-tight">
               Idhan Zarkasyah
             </p>
-            <p className="text-accent-dim text-xs font-light tracking-wide mt-0.5">Front End Developer</p>
+            <p className="text-accent-dim text-xs font-light tracking-wide mt-0.5">
+              Front End Developer
+            </p>
           </motion.div>
         )}
       </motion.div>
