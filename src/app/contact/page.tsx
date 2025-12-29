@@ -236,15 +236,17 @@ export default function ContactPage() {
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                      {error && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg"
-                        >
-                          <p className="text-red-300 text-sm font-medium">{error}</p>
-                        </motion.div>
-                      )}
+                    {error && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg"
+                      >
+                        <p className="text-red-300 text-sm font-medium">
+                          {error}
+                        </p>
+                      </motion.div>
+                    )}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label
