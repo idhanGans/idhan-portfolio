@@ -1,4 +1,7 @@
+import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,6 +25,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Check if Resend is configured
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY not configured");
+      return NextResponse.json(
+        { error: "Email service not configured" },
+        { status: 500 }
+      );
+    }
+
     // Create email content
     const emailContent = `
       <html>
@@ -35,9 +47,7 @@ export async function POST(request: NextRequest) {
             
             <div style="margin-top: 20px;">
               <p><strong>Message:</strong></p>
-              <p style="white-space: pre-wrap; line-height: 1.6;">${escapeHtml(
-                message
-              )}</p>
+              <p style="white-space: pre-wrap; line-height: 1.6;">${escapeHtml(message)}</p>
             </div>
           </div>
           
@@ -49,59 +59,60 @@ export async function POST(request: NextRequest) {
       </html>
     `;
 
-    // Store the message in a JSON file (since we're not using a database)
-    const storedMessages = await readStoredMessages();
-    storedMessages.push({
-      id: Date.now(),
-      timestamp: new Date().toISOString(),
-      name,
-      email,
-      subject,
-      message,
-      read: false,
-    });
-    await saveStoredMessages(storedMessages);
-
-    // Try to send email if Resend API key is available
-    const apiKey = process.env.RESEND_API_KEY;
-    const contactEmail =
-      process.env.CONTACT_EMAIL || "idhan.arbeitsplatz@gmail.com";
-    if (apiKey) {
-      try {
-        const response = await fetch("https://api.resend.com/emails", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${apiKey}`,
-          },
-          body: JSON.stringify({
-            from: "Contact Form <onboarding@resend.dev>",
-            to: contactEmail,
-            subject: `New Contact Form: ${escapeHtml(subject)}`,
-            html: emailContent,
-            replyTo: email,
-          }),
-        });
-
-        if (!response.ok) {
-          console.warn("Resend API error, but message was stored locally");
-        }
-      } catch (emailError) {
-        console.warn("Email service unavailable, message stored locally");
-      }
+    // Store locally (for development, won't work on Vercel)
+    try {
+      const storedMessages = await readStoredMessages();
+      storedMessages.push({
+        id: Date.now(),
+        timestamp: new Date().toISOString(),
+        name,
+        email,
+        subject,
+        message,
+        read: false,
+      });
+      await saveStoredMessages(storedMessages);
+    } catch (storageError) {
+      console.log("Local storage not available (expected on Vercel)");
     }
 
-    return NextResponse.json(
-      {
-        success: true,
-        message: "Your message has been received. I'll get back to you soon!",
-      },
-      { status: 200 }
-    );
-  } catch (error) {
+    // Send email via Resend
+    const contactEmail = process.env.CONTACT_EMAIL || "idhan.arbeitsplatz@gmail.com";
+    
+    try {
+      const data = await resend.emails.send({
+        from: "Portfolio Contact <onboarding@resend.dev>",
+        to: [contactEmail],
+        subject: `New Contact: ${subject}`,
+        html: emailContent,
+        replyTo: email,
+      });
+
+      console.log("Email sent successfully:", data);
+
+      return NextResponse.json(
+        {
+          success: true,
+          message: "Your message has been received. I will get back to you soon!",
+        },
+        { status: 200 }
+      );
+    } catch (emailError: unknown) {
+      console.error("Resend error:", emailError);
+      const errorMessage = emailError instanceof Error ? emailError.message : "Unknown error";
+      return NextResponse.json(
+        { 
+          error: "Failed to send email",
+          details: errorMessage 
+        },
+        { status: 500 }
+      );
+    }
+  } catch (error: unknown) {
     console.error("Contact form error:", error);
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json(
-      { error: "Failed to process contact form" },
+      { error: "Failed to process contact form", details: errorMessage },
       { status: 500 }
     );
   }
@@ -119,8 +130,8 @@ function escapeHtml(text: string): string {
   return text.replace(/[&<>"']/g, (m) => map[m]);
 }
 
-// Helper functions to store messages locally
-async function readStoredMessages(): Promise<any[]> {
+// Helper functions for local storage
+async function readStoredMessages(): Promise<unknown[]> {
   try {
     const fs = await import("fs").then((m) => m.promises);
     const filePath = process.cwd() + "/messages.json";
@@ -135,12 +146,12 @@ async function readStoredMessages(): Promise<any[]> {
   }
 }
 
-async function saveStoredMessages(messages: any[]): Promise<void> {
+async function saveStoredMessages(messages: unknown[]): Promise<void> {
   try {
     const fs = await import("fs").then((m) => m.promises);
     const filePath = process.cwd() + "/messages.json";
     await fs.writeFile(filePath, JSON.stringify(messages, null, 2));
   } catch (error) {
-    console.error("Failed to save messages:", error);
+    console.log("Storage error:", error);
   }
 }
