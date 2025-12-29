@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono, Share_Tech } from "next/font/google";
 import dynamic from "next/dynamic";
 import "./globals.css";
 import { Navigation, Footer } from "@/components/ui";
@@ -29,6 +29,13 @@ const spaceGrotesk = Space_Grotesk({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
+const shareTech = Share_Tech({
+  subsets: ["latin"],
+  variable: "--font-share-tech",
+  weight: "400",
   display: "swap",
 });
 
@@ -103,7 +110,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${shareTech.variable}`}
     >
       <body className="min-h-screen bg-primary-dark font-sans antialiased">
         {/* 3D Background */}
