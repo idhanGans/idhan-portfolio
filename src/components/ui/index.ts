@@ -6,3 +6,4 @@ export { default as ExperienceCard } from "./ExperienceCard";
 export { default as PageTransition } from "./PageTransition";
 export { default as SectionHeading } from "./SectionHeading";
 export { default as Button } from "./Button";
+export { default as Logo } from "./Logo";

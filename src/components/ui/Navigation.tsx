@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
+import Logo from "./Logo";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -48,23 +49,12 @@ export default function Navigation() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="group">
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex items-center gap-3"
-              >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-white/20 to-white/5 border border-white/10 flex items-center justify-center group-hover:border-white/20 transition-colors">
-                  <span className="font-display font-bold text-white text-lg">
-                    IZ
-                  </span>
-                </div>
-                <div className="hidden sm:block">
-                  <p className="text-white font-display font-medium text-sm">
-                    Idhan Zarkasyah
-                  </p>
-                  <p className="text-accent-dim text-xs">Front End Developer</p>
-                </div>
-              </motion.div>
+              <Logo
+                size="md"
+                animated={true}
+                showText={true}
+                className="w-10 h-10"
+              />
             </Link>
 
             {/* Desktop Navigation */}
