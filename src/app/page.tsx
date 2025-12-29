@@ -80,7 +80,8 @@ export default function HomePage() {
             >
               I craft immersive digital experiences through creative coding,
               interactive design, and cutting-edge web technologies.
-              Specializing in React, Next.js, and WebGL.
+              Specializing in React, Next.js, and WebGL. Helping You to grow
+              Your business through innovative tech solutions.
             </motion.p>
 
             {/* CTA Buttons */}

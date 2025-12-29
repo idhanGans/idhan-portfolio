@@ -28,7 +28,7 @@ const certifications = [
     date: "2023",
   },
   {
-    name: "Meta Front-End Developer Professional Certificate",
+    name: "Meta Programming With Javascript Certification",
     issuer: "Meta (Coursera)",
     date: "2022",
   },

@@ -26,7 +26,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-1">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -116,10 +116,13 @@ export default function AboutPage() {
                 <p className="text-accent-dim leading-relaxed mb-6">
                   My professional foundation was forged in the Food and
                   Beverages industry, where I transitioned from managing daily
-                  operations to serving as Deputy CEO at Start Up Company. This
-                  journey has given me a rare full-cycle perspective—from
-                  designing optimized layouts to architecting company-wide
-                  growth strategies.
+                  operations to serving as Deputy CEO at a Startup. This journey
+                  has given me a rare full-cycle perspective—from designing
+                  optimized layouts to architecting company-wide growth
+                  strategies. Central to this journey is my deep expertise in
+                  Business Development; I have a proven track record of
+                  identifying market opportunities, building strategic
+                  partnerships, and scaling ventures from the ground up.
                 </p>
 
                 <p className="text-accent-dim leading-relaxed mb-6">
@@ -129,14 +132,17 @@ export default function AboutPage() {
                   development is unique: I do not just write code; I build
                   solutions that are technically robust and perfectly aligned
                   with core business objectives and operational efficiency.
+                  Helping You to Bring Your Ideas to Life.
                 </p>
 
                 <p className="text-accent-dim leading-relaxed mb-8">
-                  Whether you need a developer who understands the bottom line
-                  or a strategist who can speak the language of tech, I am ready
-                  to deliver. My experience covers the full cycle from
-                  operational processes to executive leadership, now integrated
-                  with modern development techniques.
+                  I am uniquely positioned to help you develop and grow your
+                  business. Whether you need a developer who understands the
+                  bottom line or a strategist who can speak the language of
+                  tech, I am ready to deliver. My experience covers the full
+                  cycle from operational processes and business development to
+                  executive leadership, now integrated with modern development
+                  techniques.
                 </p>
               </div>
 

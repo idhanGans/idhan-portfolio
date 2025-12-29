@@ -60,7 +60,11 @@ export default function Footer() {
             </Link>
             <p className="text-accent-dim text-sm leading-relaxed max-w-sm mb-6">
               Crafting immersive digital experiences through creative coding,
-              interactive design, and cutting-edge web technologies.
+              interactive design, and cutting-edge web technologies. Helping You
+              to Bring Your Ideas to Life.
+            </p>
+            <p className="text-accent-dim text-sm mb-4">
+              Connect with me on social media:
             </p>
             <div className="flex items-center gap-3">
               {footerLinks.social.map((item) => (
