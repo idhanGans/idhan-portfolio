@@ -2,7 +2,7 @@ export const experiences = [
   {
     title: "Senior Front End Developer",
     company: "Tech Innovations Inc.",
-    location: "Jakarta, Indonesia",
+    location: "Malang, Indonesia",
     period: "2023 - Present",
     current: true,
     description: [

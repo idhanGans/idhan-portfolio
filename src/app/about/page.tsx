@@ -91,7 +91,7 @@ export default function AboutPage() {
               <div className="mt-12 space-y-4">
                 <div className="flex items-center gap-3 text-accent-dim">
                   <FiMapPin size={18} />
-                  <span>Jakarta, Indonesia</span>
+                  <span>Malang, Indonesia</span>
                 </div>
                 <div className="flex items-center gap-3 text-accent-dim">
                   <FiCalendar size={18} />

@@ -15,7 +15,7 @@ const contactInfo = [
   {
     icon: FiMapPin,
     label: "Location",
-    value: "Jakarta, Indonesia",
+    value: "Malang, Indonesia",
     href: null,
   },
 ];

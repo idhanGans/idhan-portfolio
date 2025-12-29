@@ -8,11 +8,16 @@ import { experiences } from "@/lib/data";
 
 const education = [
   {
-    degree: "Bachelor of Computer Science",
-    institution: "Institut Teknologi Bandung",
-    period: "2015 - 2019",
-    description:
-      "Focused on software engineering, web development, and human-computer interaction.",
+    degree: "Bachelor of Economics",
+    institution: "Brawijaya University, Indonesia",
+    period: "2020",
+    description: "Focused on economics and business management.",
+  },
+  {
+    degree: "Bachelor of Arts",
+    institution: "Leipzig University, Germany",
+    period: "2015",
+    description: "Focused on administration and social sciences.",
   },
 ];
 
@@ -90,29 +95,33 @@ export default function ExperiencePage() {
               </h2>
             </motion.div>
 
-            {education.map((edu, index) => (
-              <motion.div
-                key={edu.degree}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-6 bg-white/5 border border-white/10 rounded-xl hover:border-white/20 transition-colors"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-display font-semibold text-white mb-1">
-                      {edu.degree}
-                    </h3>
-                    <p className="text-accent mb-2">{edu.institution}</p>
-                    <p className="text-accent-dim text-sm">{edu.description}</p>
+            <div className="space-y-6">
+              {education.map((edu, index) => (
+                <motion.div
+                  key={edu.degree}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="p-8 bg-white/5 border border-white/10 rounded-xl hover:border-white/20 transition-colors"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div>
+                      <h3 className="text-xl font-display font-semibold text-white mb-1">
+                        {edu.degree}
+                      </h3>
+                      <p className="text-accent mb-2">{edu.institution}</p>
+                      <p className="text-accent-dim text-sm">
+                        {edu.description}
+                      </p>
+                    </div>
+                    <span className="text-accent-dim text-sm font-mono whitespace-nowrap">
+                      {edu.period}
+                    </span>
                   </div>
-                  <span className="text-accent-dim text-sm font-mono whitespace-nowrap">
-                    {edu.period}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
