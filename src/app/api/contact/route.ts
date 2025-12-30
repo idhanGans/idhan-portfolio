@@ -47,7 +47,9 @@ export async function POST(request: NextRequest) {
             
             <div style="margin-top: 20px;">
               <p><strong>Message:</strong></p>
-              <p style="white-space: pre-wrap; line-height: 1.6;">${escapeHtml(message)}</p>
+              <p style="white-space: pre-wrap; line-height: 1.6;">${escapeHtml(
+                message
+              )}</p>
             </div>
           </div>
           
@@ -77,8 +79,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email via Resend
-    const contactEmail = process.env.CONTACT_EMAIL || "idhan.arbeitsplatz@gmail.com";
-    
+    const contactEmail =
+      process.env.CONTACT_EMAIL || "idhan.arbeitsplatz@gmail.com";
+
     try {
       const data = await resend.emails.send({
         from: "Portfolio Contact <onboarding@resend.dev>",
@@ -93,24 +96,27 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           success: true,
-          message: "Your message has been received. I will get back to you soon!",
+          message:
+            "Your message has been received. I will get back to you soon!",
         },
         { status: 200 }
       );
     } catch (emailError: unknown) {
       console.error("Resend error:", emailError);
-      const errorMessage = emailError instanceof Error ? emailError.message : "Unknown error";
+      const errorMessage =
+        emailError instanceof Error ? emailError.message : "Unknown error";
       return NextResponse.json(
-        { 
+        {
           error: "Failed to send email",
-          details: errorMessage 
+          details: errorMessage,
         },
         { status: 500 }
       );
     }
   } catch (error: unknown) {
     console.error("Contact form error:", error);
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json(
       { error: "Failed to process contact form", details: errorMessage },
       { status: 500 }
