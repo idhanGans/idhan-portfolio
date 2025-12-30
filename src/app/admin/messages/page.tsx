@@ -129,12 +129,23 @@ export default function MessagesPage() {
 
   const getSubjectLabel = (subject: string) => {
     const labels: Record<string, { text: string; color: string }> = {
-      project: { text: "Project Inquiry", color: "bg-blue-500/20 text-blue-400" },
+      project: {
+        text: "Project Inquiry",
+        color: "bg-blue-500/20 text-blue-400",
+      },
       job: { text: "Job Opportunity", color: "bg-green-500/20 text-green-400" },
-      collaboration: { text: "Collaboration", color: "bg-purple-500/20 text-purple-400" },
+      collaboration: {
+        text: "Collaboration",
+        color: "bg-purple-500/20 text-purple-400",
+      },
       other: { text: "Other", color: "bg-gray-500/20 text-gray-400" },
     };
-    return labels[subject] || { text: subject, color: "bg-gray-500/20 text-gray-400" };
+    return (
+      labels[subject] || {
+        text: subject,
+        color: "bg-gray-500/20 text-gray-400",
+      }
+    );
   };
 
   // Filter and search messages

@@ -32,7 +32,10 @@ export async function GET() {
   try {
     const messages = await readMessages();
     // Sort by timestamp, newest first
-    messages.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+    messages.sort(
+      (a, b) =>
+        new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+    );
     return NextResponse.json(messages);
   } catch (error) {
     console.error("Error reading messages:", error);
@@ -60,10 +63,7 @@ export async function DELETE(request: NextRequest) {
     const filteredMessages = messages.filter((msg) => msg.id !== parseInt(id));
 
     if (filteredMessages.length === messages.length) {
-      return NextResponse.json(
-        { error: "Message not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Message not found" }, { status: 404 });
     }
 
     await writeMessages(filteredMessages);
@@ -94,10 +94,7 @@ export async function PATCH(request: NextRequest) {
     const messageIndex = messages.findIndex((msg) => msg.id === id);
 
     if (messageIndex === -1) {
-      return NextResponse.json(
-        { error: "Message not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Message not found" }, { status: 404 });
     }
 
     messages[messageIndex] = {
@@ -106,7 +103,10 @@ export async function PATCH(request: NextRequest) {
     };
 
     await writeMessages(messages);
-    return NextResponse.json({ success: true, message: messages[messageIndex] });
+    return NextResponse.json({
+      success: true,
+      message: messages[messageIndex],
+    });
   } catch (error) {
     console.error("Error updating message:", error);
     return NextResponse.json(

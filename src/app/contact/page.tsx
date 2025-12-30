@@ -63,7 +63,8 @@ export default function ContactPage() {
         return null;
       case "message":
         if (value.length < 10) return "Message must be at least 10 characters";
-        if (value.length > 5000) return "Message is too long (max 5000 characters)";
+        if (value.length > 5000)
+          return "Message is too long (max 5000 characters)";
         return null;
       default:
         return null;
@@ -80,7 +81,7 @@ export default function ContactPage() {
       ...prev,
       [name]: value,
     }));
-    
+
     // Clear field error when user starts typing
     if (fieldErrors[name]) {
       setFieldErrors((prev) => ({ ...prev, [name]: "" }));
@@ -88,7 +89,9 @@ export default function ContactPage() {
   };
 
   const handleBlur = (
-    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.FocusEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
     const error = validateField(name, value);
@@ -329,11 +332,17 @@ export default function ContactPage() {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           required
-                          className={`input-field ${fieldErrors.name ? "border-red-500/50 focus:border-red-500" : ""}`}
+                          className={`input-field ${
+                            fieldErrors.name
+                              ? "border-red-500/50 focus:border-red-500"
+                              : ""
+                          }`}
                           placeholder="John Doe"
                         />
                         {fieldErrors.name && (
-                          <p className="mt-1 text-xs text-red-400">{fieldErrors.name}</p>
+                          <p className="mt-1 text-xs text-red-400">
+                            {fieldErrors.name}
+                          </p>
                         )}
                       </div>
                       <div>
@@ -351,11 +360,17 @@ export default function ContactPage() {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           required
-                          className={`input-field ${fieldErrors.email ? "border-red-500/50 focus:border-red-500" : ""}`}
+                          className={`input-field ${
+                            fieldErrors.email
+                              ? "border-red-500/50 focus:border-red-500"
+                              : ""
+                          }`}
                           placeholder="john@example.com"
                         />
                         {fieldErrors.email && (
-                          <p className="mt-1 text-xs text-red-400">{fieldErrors.email}</p>
+                          <p className="mt-1 text-xs text-red-400">
+                            {fieldErrors.email}
+                          </p>
                         )}
                       </div>
                     </div>
@@ -374,7 +389,11 @@ export default function ContactPage() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         required
-                        className={`input-field ${fieldErrors.subject ? "border-red-500/50 focus:border-red-500" : ""}`}
+                        className={`input-field ${
+                          fieldErrors.subject
+                            ? "border-red-500/50 focus:border-red-500"
+                            : ""
+                        }`}
                       >
                         <option value="">Select a subject</option>
                         <option value="project">Project Inquiry</option>
@@ -383,7 +402,9 @@ export default function ContactPage() {
                         <option value="other">Other</option>
                       </select>
                       {fieldErrors.subject && (
-                        <p className="mt-1 text-xs text-red-400">{fieldErrors.subject}</p>
+                        <p className="mt-1 text-xs text-red-400">
+                          {fieldErrors.subject}
+                        </p>
                       )}
                     </div>
 
@@ -406,11 +427,17 @@ export default function ContactPage() {
                         required
                         rows={6}
                         maxLength={5000}
-                        className={`input-field resize-none ${fieldErrors.message ? "border-red-500/50 focus:border-red-500" : ""}`}
+                        className={`input-field resize-none ${
+                          fieldErrors.message
+                            ? "border-red-500/50 focus:border-red-500"
+                            : ""
+                        }`}
                         placeholder="Tell me about your project..."
                       />
                       {fieldErrors.message && (
-                        <p className="mt-1 text-xs text-red-400">{fieldErrors.message}</p>
+                        <p className="mt-1 text-xs text-red-400">
+                          {fieldErrors.message}
+                        </p>
                       )}
                     </div>
 
