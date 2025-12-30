@@ -43,22 +43,87 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+
+  // Client-side validation
+  const validateField = (name: string, value: string): string | null => {
+    switch (name) {
+      case "name":
+        if (value.length < 2) return "Name must be at least 2 characters";
+        if (value.length > 100) return "Name is too long";
+        if (/^[\d\s]+$/.test(value)) return "Please enter a valid name";
+        return null;
+      case "email":
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) return "Please enter a valid email";
+        if (value.length > 254) return "Email is too long";
+        return null;
+      case "subject":
+        if (!value) return "Please select a subject";
+        return null;
+      case "message":
+        if (value.length < 10) return "Message must be at least 10 characters";
+        if (value.length > 5000) return "Message is too long (max 5000 characters)";
+        return null;
+      default:
+        return null;
+    }
+  };
 
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
+    const { name, value } = e.target;
     setFormState((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+    
+    // Clear field error when user starts typing
+    if (fieldErrors[name]) {
+      setFieldErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
+
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    if (error) {
+      setFieldErrors((prev) => ({ ...prev, [name]: error }));
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const errors: Record<string, string> = {};
+    let isValid = true;
+
+    Object.entries(formState).forEach(([key, value]) => {
+      const error = validateField(key, value);
+      if (error) {
+        errors[key] = error;
+        isValid = false;
+      }
+    });
+
+    setFieldErrors(errors);
+    return isValid;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setError(null);
+
+    // Validate all fields before submitting
+    if (!validateForm()) {
+      setError("Please fix the errors above");
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
       const response = await fetch("/api/contact", {
@@ -78,6 +143,7 @@ export default function ContactPage() {
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormState({ name: "", email: "", subject: "", message: "" });
+      setFieldErrors({});
       // Reset success message after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (err) {
@@ -261,10 +327,14 @@ export default function ContactPage() {
                           name="name"
                           value={formState.name}
                           onChange={handleChange}
+                          onBlur={handleBlur}
                           required
-                          className="input-field"
+                          className={`input-field ${fieldErrors.name ? "border-red-500/50 focus:border-red-500" : ""}`}
                           placeholder="John Doe"
                         />
+                        {fieldErrors.name && (
+                          <p className="mt-1 text-xs text-red-400">{fieldErrors.name}</p>
+                        )}
                       </div>
                       <div>
                         <label
@@ -279,10 +349,14 @@ export default function ContactPage() {
                           name="email"
                           value={formState.email}
                           onChange={handleChange}
+                          onBlur={handleBlur}
                           required
-                          className="input-field"
+                          className={`input-field ${fieldErrors.email ? "border-red-500/50 focus:border-red-500" : ""}`}
                           placeholder="john@example.com"
                         />
+                        {fieldErrors.email && (
+                          <p className="mt-1 text-xs text-red-400">{fieldErrors.email}</p>
+                        )}
                       </div>
                     </div>
 
@@ -298,8 +372,9 @@ export default function ContactPage() {
                         name="subject"
                         value={formState.subject}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         required
-                        className="input-field"
+                        className={`input-field ${fieldErrors.subject ? "border-red-500/50 focus:border-red-500" : ""}`}
                       >
                         <option value="">Select a subject</option>
                         <option value="project">Project Inquiry</option>
@@ -307,6 +382,9 @@ export default function ContactPage() {
                         <option value="collaboration">Collaboration</option>
                         <option value="other">Other</option>
                       </select>
+                      {fieldErrors.subject && (
+                        <p className="mt-1 text-xs text-red-400">{fieldErrors.subject}</p>
+                      )}
                     </div>
 
                     <div>
@@ -315,17 +393,25 @@ export default function ContactPage() {
                         className="block text-sm font-medium text-accent mb-2"
                       >
                         Message
+                        <span className="text-accent-dim font-normal ml-2">
+                          ({formState.message.length}/5000)
+                        </span>
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         value={formState.message}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         required
                         rows={6}
-                        className="input-field resize-none"
+                        maxLength={5000}
+                        className={`input-field resize-none ${fieldErrors.message ? "border-red-500/50 focus:border-red-500" : ""}`}
                         placeholder="Tell me about your project..."
                       />
+                      {fieldErrors.message && (
+                        <p className="mt-1 text-xs text-red-400">{fieldErrors.message}</p>
+                      )}
                     </div>
 
                     <Button
