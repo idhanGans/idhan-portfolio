@@ -1,8 +1,8 @@
 export const experiences = [
   {
-    title: "Senior Front End Developer",
+    title: "Senior Full-Stack Developer",
     company: "Tech Innovations Inc.",
-    location: "Malang, Indonesia",
+    location: "Remote, Leipzig, Germany",
     period: "2023 - Present",
     current: true,
     description: [
@@ -16,7 +16,7 @@ export const experiences = [
   {
     title: "Front End Developer",
     company: "Digital Agency Co.",
-    location: "Bandung, Indonesia",
+    location: "Remote, Berlin, Germany",
     period: "2021 - 2023",
     current: false,
     description: [
@@ -30,7 +30,7 @@ export const experiences = [
   {
     title: "Junior Web Developer",
     company: "Startup Hub",
-    location: "Yogyakarta, Indonesia",
+    location: "Remote, Yogyakarta, Indonesia",
     period: "2019 - 2021",
     current: false,
     description: [
