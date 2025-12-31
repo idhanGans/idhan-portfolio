@@ -30,12 +30,12 @@ export default function Button({
 
   const variantStyles = {
     primary:
-      "bg-white text-primary-dark hover:bg-accent-silver active:bg-accent",
+      "bg-mono-black text-mono-white hover:bg-mono-charcoal active:bg-secondary",
     secondary:
-      "bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/30",
+      "bg-mono-grey-100 text-mono-black border border-mono-grey-200 hover:bg-mono-grey-200 hover:border-mono-grey-300",
     outline:
-      "bg-transparent text-white border border-white/30 hover:bg-white/10 hover:border-white/50",
-    ghost: "bg-transparent text-white hover:bg-white/10",
+      "bg-transparent text-mono-black border border-mono-grey-300 hover:bg-mono-grey-50 hover:border-accent",
+    ghost: "bg-transparent text-mono-black hover:bg-mono-grey-100",
   };
 
   const sizeStyles = {

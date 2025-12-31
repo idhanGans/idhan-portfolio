@@ -35,8 +35,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-10 border-t border-white/10 bg-primary-dark/50 backdrop-blur-lg">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer className="relative z-10 border-t border-mono-grey-200 bg-mono-grey-50/80 backdrop-blur-lg">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Brand Section */}
           <div className="md:col-span-5">
@@ -45,25 +45,25 @@ export default function Footer() {
                 whileHover={{ scale: 1.02 }}
                 className="flex items-center gap-3 mb-6"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white/20 to-white/5 border border-white/10 flex items-center justify-center">
-                  <span className="font-display font-bold text-white text-xl">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-mono-grey-200 to-mono-grey-100 border border-mono-grey-300 flex items-center justify-center">
+                  <span className="font-display font-bold text-mono-black text-xl">
                     IZ
                   </span>
                 </div>
                 <div>
-                  <p className="text-white font-display font-semibold">
+                  <p className="text-mono-black font-display font-semibold">
                     Idhan Zarkasyah
                   </p>
-                  <p className="text-accent-dim text-sm">Front End Developer</p>
+                  <p className="text-accent text-sm">Front End Developer</p>
                 </div>
               </motion.div>
             </Link>
-            <p className="text-accent-dim text-sm leading-relaxed max-w-sm mb-6">
+            <p className="text-accent text-sm leading-relaxed max-w-sm mb-6">
               Crafting immersive digital experiences through creative coding,
               interactive design, and cutting-edge web technologies. Helping You
               to Bring Your Ideas to Life.
             </p>
-            <p className="text-accent-dim text-sm mb-4">
+            <p className="text-accent text-sm mb-4">
               Connect with me on social media:
             </p>
             <div className="flex items-center gap-3">
@@ -75,7 +75,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-accent-dim hover:text-white hover:border-white/20 transition-colors"
+                  className="w-10 h-10 rounded-lg bg-mono-white border border-mono-grey-300 flex items-center justify-center text-accent hover:text-mono-black hover:border-accent transition-colors"
                 >
                   <item.icon size={18} />
                 </motion.a>
@@ -85,7 +85,7 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className="md:col-span-3">
-            <h4 className="text-white font-display font-medium mb-4">
+            <h4 className="text-mono-black font-display font-semibold mb-4">
               Navigation
             </h4>
             <ul className="space-y-3">
@@ -94,7 +94,7 @@ export default function Footer() {
                   <Link href={item.href}>
                     <motion.span
                       whileHover={{ x: 4 }}
-                      className="text-accent-dim hover:text-white transition-colors text-sm flex items-center gap-1 group"
+                      className="text-accent hover:text-mono-black transition-colors text-sm flex items-center gap-1 group"
                     >
                       {item.name}
                       <FiArrowUpRight
@@ -110,16 +110,16 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="md:col-span-4">
-            <h4 className="text-white font-display font-medium mb-4">
+            <h4 className="text-mono-black font-display font-semibold mb-4">
               Get In Touch
             </h4>
             <div className="space-y-4">
-              <p className="text-accent-dim text-sm">
+              <p className="text-accent text-sm">
                 Available for freelance projects and full-time opportunities.
               </p>
               <a
                 href="mailto:idhan.arbeitsplatz@gmail.com"
-                className="text-white font-medium hover:text-accent-silver transition-colors"
+                className="text-mono-black font-medium hover:text-accent-dim transition-colors"
               >
                 idhan.arbeitsplatz@gmail.com
               </a>
@@ -128,7 +128,7 @@ export default function Footer() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="px-6 py-3 bg-white text-primary-dark font-medium text-sm rounded-lg hover:bg-accent-silver transition-colors inline-flex items-center gap-2"
+                    className="px-6 py-3 bg-mono-black text-mono-white font-medium text-sm rounded-lg hover:bg-mono-charcoal transition-colors inline-flex items-center gap-2"
                   >
                     Start a Project
                     <FiArrowUpRight size={16} />
@@ -140,11 +140,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-accent-dim text-sm">
+        <div className="mt-16 pt-8 border-t border-mono-grey-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-accent text-sm">
             © {currentYear} Idhan Zarkasyah. All rights reserved.
           </p>
-          <p className="text-accent-dim text-xs">
+          <p className="text-accent text-xs">
             Built with Next.js, React Three Fiber & Framer Motion
           </p>
         </div>

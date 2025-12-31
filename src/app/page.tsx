@@ -8,6 +8,7 @@ import {
   SectionHeading,
   ProjectCard,
   SkillCard,
+  CTASection,
 } from "@/components/ui";
 import { skills, projects } from "@/lib/data";
 
@@ -40,8 +41,8 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="section-container py-15">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-mono-white">
+        <div className="section-container py-20 lg:py-24">
           <motion.div
             variants={heroVariants}
             initial="hidden"
@@ -49,9 +50,9 @@ export default function HomePage() {
             className="max-w-6xl mx-auto text-center"
           >
             {/* Badge */}
-            <motion.div variants={itemVariants} className="mb-4">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-accent">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            <motion.div variants={itemVariants} className="mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-mono-grey-100 border border-mono-grey-200 rounded-full text-sm text-mono-black font-medium">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                 Available for new projects
               </span>
             </motion.div>
@@ -59,7 +60,7 @@ export default function HomePage() {
             {/* Main Heading */}
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-4"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-mono-black leading-tight mb-6"
             >
               Hi, I&apos;m{" "}
               <span className="text-gradient-animated">Idhan Zarkasyah</span>
@@ -68,7 +69,7 @@ export default function HomePage() {
             {/* Subtitle */}
             <motion.p
               variants={itemVariants}
-              className="text-xl md:text-2xl text-accent mb-3"
+              className="text-xl md:text-2xl text-accent mb-4"
             >
               Front End Developer & Creative Technologist
             </motion.p>
@@ -76,7 +77,7 @@ export default function HomePage() {
             {/* Description */}
             <motion.p
               variants={itemVariants}
-              className="text-accent-dim text-lg max-w-2xl mx-auto mb-8 leading-relaxed"
+              className="text-accent-dim text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
             >
               I craft immersive digital experiences through creative coding,
               interactive design, and cutting-edge web technologies.
@@ -112,7 +113,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent hover:text-white hover:border-white/20 transition-colors"
+                className="w-12 h-12 rounded-lg bg-mono-grey-100 border border-mono-grey-200 flex items-center justify-center text-accent hover:text-mono-black hover:border-accent transition-colors"
               >
                 <FiGithub size={20} />
               </motion.a>
@@ -122,7 +123,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent hover:text-white hover:border-white/20 transition-colors"
+                className="w-12 h-12 rounded-lg bg-mono-grey-100 border border-mono-grey-200 flex items-center justify-center text-accent hover:text-mono-black hover:border-accent transition-colors"
               >
                 <FiLinkedin size={20} />
               </motion.a>
@@ -140,19 +141,19 @@ export default function HomePage() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-2"
+            className="w-6 h-10 rounded-full border-2 border-mono-grey-300 flex items-start justify-center p-2"
           >
             <motion.div
               animate={{ opacity: [1, 0.3, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-2 bg-white/50 rounded-full"
+              className="w-1 h-2 bg-accent rounded-full"
             />
           </motion.div>
         </motion.div>
       </section>
 
       {/* Skills Section */}
-      <section className="py-24 lg:py-32">
+      <section className="py-24 lg:py-32 bg-mono-grey-50">
         <div className="section-container">
           <SectionHeading
             subtitle="Tech Stack"
@@ -177,7 +178,7 @@ export default function HomePage() {
       </div>
 
       {/* Featured Projects Section */}
-      <section className="py-16 lg:py-20">
+      <section className="py-20 lg:py-28 bg-mono-white">
         <div className="section-container">
           <SectionHeading
             subtitle="Portfolio"
@@ -207,39 +208,12 @@ export default function HomePage() {
       </div>
 
       {/* CTA Section */}
-      <section className="py-24 lg:py-32">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
-              Let&apos;s Build Something{" "}
-              <span className="text-gradient">Amazing Together</span>
-            </h2>
-            <p className="text-accent-dim text-lg mb-10">
-              I&apos;m currently available for freelance projects and full-time
-              opportunities. If you have a project in mind or just want to chat,
-              feel free to reach out.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact">
-                <Button size="lg" icon={<FiArrowRight size={18} />}>
-                  Start a Project
-                </Button>
-              </Link>
-              <a href="mailto:idhan.arbeitsplatz@gmail.com">
-                <Button variant="ghost" size="lg">
-                  idhan.arbeitsplatz@gmail.com
-                </Button>
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CTASection
+        title="Let's Build Something Amazing Together"
+        description="I'm currently available for freelance projects and full-time opportunities. If you have a project in mind or just want to chat, feel free to reach out."
+        buttonText="Start a Project"
+        variant="dark"
+      />
     </>
   );
 }

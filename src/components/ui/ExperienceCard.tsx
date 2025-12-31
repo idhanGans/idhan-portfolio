@@ -32,12 +32,12 @@ export default function ExperienceCard({
       className="relative pl-8 pb-12 last:pb-0"
     >
       {/* Timeline Line */}
-      <div className="absolute left-0 top-2 bottom-0 w-px bg-gradient-to-b from-white/30 to-transparent" />
+      <div className="absolute left-0 top-2 bottom-0 w-px bg-gradient-to-b from-accent/50 to-transparent" />
 
       {/* Timeline Dot */}
       <div
         className={`absolute left-0 top-2 w-2 h-2 -translate-x-1/2 rounded-full ${
-          current ? "bg-white ring-4 ring-white/20" : "bg-accent-dim"
+          current ? "bg-mono-black ring-4 ring-mono-grey-200" : "bg-accent"
         }`}
       />
 
@@ -46,22 +46,22 @@ export default function ExperienceCard({
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-4">
           <div className="flex-1">
-            <h3 className="text-xl font-display font-semibold text-white group-hover:text-accent-silver transition-colors">
+            <h3 className="text-xl font-display font-semibold text-mono-black group-hover:text-accent-dim transition-colors">
               {title}
             </h3>
             <div className="flex flex-wrap items-center gap-2 text-sm mt-1">
-              <span className="text-accent">{company}</span>
-              <span className="text-accent-dim">•</span>
-              <span className="text-accent-dim">{location}</span>
+              <span className="text-mono-black font-medium">{company}</span>
+              <span className="text-accent">•</span>
+              <span className="text-accent">{location}</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
             {current && (
-              <span className="px-2 py-1 text-xs font-medium bg-green-500/20 text-green-400 rounded-full border border-green-500/30">
+              <span className="px-2 py-1 text-xs font-medium bg-green-50 text-green-700 rounded-full border border-green-200">
                 Current
               </span>
             )}
-            <span className="text-accent-dim text-sm font-mono">{period}</span>
+            <span className="text-accent text-sm font-mono">{period}</span>
           </div>
         </div>
 
@@ -76,7 +76,7 @@ export default function ExperienceCard({
               transition={{ delay: index * 0.1 + i * 0.05 }}
               className="text-accent-dim text-sm leading-relaxed flex items-start gap-2"
             >
-              <span className="text-accent mt-1.5">▹</span>
+              <span className="text-mono-black mt-1.5">▹</span>
               {item}
             </motion.li>
           ))}
@@ -87,7 +87,7 @@ export default function ExperienceCard({
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 text-xs font-medium bg-white/5 border border-white/10 rounded-full text-accent hover:border-white/20 transition-colors"
+              className="px-3 py-1 text-xs font-medium bg-mono-grey-50 border border-mono-grey-200 rounded-full text-mono-black hover:border-accent transition-colors"
             >
               {tech}
             </span>

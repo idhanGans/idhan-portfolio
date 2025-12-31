@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight, FiMapPin, FiCalendar, FiCode } from "react-icons/fi";
-import { Button, SectionHeading } from "@/components/ui";
+import { Button, SectionHeading, CTASection } from "@/components/ui";
 
 const stats = [
   { label: "Years of Experience", value: "7+" },
@@ -26,7 +26,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-1">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-1 bg-mono-white">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export default function AboutPage() {
       </section>
 
       {/* Main Content */}
-      <section className="pb-24 lg:pb-32">
+      <section className="pb-24 lg:pb-32 bg-mono-white">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Image Column */}
@@ -55,7 +55,7 @@ export default function AboutPage() {
             >
               <div className="relative">
                 {/* Main Image */}
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-secondary border border-white/10">
+                <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-mono-grey-100 border border-mono-grey-200 shadow-lg">
                   <Image
                     src="/idhan-profile.jpg"
                     alt="Idhan Zarkasyah"
@@ -63,7 +63,7 @@ export default function AboutPage() {
                     className="object-cover"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-mono-black/60 via-transparent to-transparent" />
                 </div>
 
                 {/* Floating Card */}
@@ -71,17 +71,17 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="absolute -bottom-6 -right-6 p-4 bg-secondary/90 backdrop-blur-lg border border-white/10 rounded-xl"
+                  className="absolute -bottom-6 -right-6 p-4 bg-mono-white/95 backdrop-blur-lg border border-mono-grey-300 rounded-lg shadow-lg"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                      <FiCode size={20} className="text-white" />
+                    <div className="w-10 h-10 rounded-lg bg-mono-grey-100 flex items-center justify-center">
+                      <FiCode size={20} className="text-mono-black" />
                     </div>
                     <div>
-                      <p className="text-white font-medium text-sm">
+                      <p className="text-mono-black font-medium text-sm">
                         Frontend Focus
                       </p>
-                      <p className="text-accent-dim text-xs">React & Next.js</p>
+                      <p className="text-accent text-xs">React & Next.js</p>
                     </div>
                   </div>
                 </motion.div>
@@ -89,11 +89,11 @@ export default function AboutPage() {
 
               {/* Quick Info */}
               <div className="mt-12 space-y-4">
-                <div className="flex items-center gap-3 text-accent-dim">
+                <div className="flex items-center gap-3 text-accent">
                   <FiMapPin size={18} />
                   <span>Malang, Indonesia</span>
                 </div>
-                <div className="flex items-center gap-3 text-accent-dim">
+                <div className="flex items-center gap-3 text-accent">
                   <FiCalendar size={18} />
                   <span>Available for new projects</span>
                 </div>
@@ -147,7 +147,7 @@ export default function AboutPage() {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-8 border-y border-white/10 mb-8">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-8 border-y border-mono-grey-200 mb-8">
                 {stats.map((stat, index) => (
                   <motion.div
                     key={stat.label}
@@ -156,24 +156,24 @@ export default function AboutPage() {
                     transition={{ delay: 0.4 + index * 0.1 }}
                     className="text-center sm:text-left"
                   >
-                    <p className="text-3xl font-display font-bold text-white mb-1">
+                    <p className="text-3xl font-display font-bold text-mono-black mb-1">
                       {stat.value}
                     </p>
-                    <p className="text-accent-dim text-sm">{stat.label}</p>
+                    <p className="text-accent text-sm">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
 
               {/* Interests */}
               <div className="mb-8">
-                <h3 className="text-white font-display font-semibold text-lg mb-4">
+                <h3 className="text-mono-black font-display font-semibold text-lg mb-4">
                   Areas of Interest
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {interests.map((interest) => (
                     <span
                       key={interest}
-                      className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-accent text-sm hover:border-white/20 transition-colors"
+                      className="px-4 py-2 bg-mono-grey-50 border border-mono-grey-200 rounded-lg text-mono-black text-sm hover:border-accent transition-colors"
                     >
                       {interest}
                     </span>
@@ -195,7 +195,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-24 lg:py-32 border-t border-white/10">
+      <section className="py-24 lg:py-32 border-t border-mono-grey-200 bg-mono-grey-50">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -205,10 +205,10 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <span className="text-accent text-sm font-mono uppercase tracking-widest mb-3 block">
+              <span className="text-accent text-sm font-mono uppercase tracking-widest mb-4 block">
                 Professional Capabilities
               </span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black mb-6">
                 Full-Cycle Expertise: From Operations to Technology
               </h2>
               <p className="text-accent-dim text-lg leading-relaxed mb-8">
@@ -242,9 +242,9 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="p-6 bg-white/5 border border-white/10 rounded-xl hover:border-white/20 transition-colors"
+                    className="p-6 bg-mono-white border border-mono-grey-200 rounded-lg hover:border-accent hover:shadow-lg transition-all"
                   >
-                    <h3 className="text-white font-display font-semibold mb-2">
+                    <h3 className="text-mono-black font-display font-semibold mb-2">
                       {item.title}
                     </h3>
                     <p className="text-accent-dim text-sm">
@@ -257,6 +257,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection variant="dark" />
     </>
   );
 }

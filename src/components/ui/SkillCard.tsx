@@ -27,31 +27,30 @@ export default function SkillCard({
       whileHover={{ y: -4 }}
       className="group relative"
     >
-      <div className="relative p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-300 h-full">
+      <div className="relative p-5 lg:p-6 rounded-lg bg-mono-white border border-mono-grey-200 hover:border-accent transition-all duration-300 h-full hover:shadow-lg">
         {/* Glow Effect */}
         <div
-          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"
+          className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"
           style={{
-            background: `radial-gradient(circle at center, ${color}20, transparent)`,
+            background: `radial-gradient(circle at center, ${color}15, transparent)`,
           }}
         />
 
         {/* Icon */}
         <div
-          className="w-10 h-10 rounded-lg flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110"
+          className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 bg-mono-grey-50"
           style={{
-            background: `linear-gradient(135deg, ${color}20, ${color}10)`,
-            border: `1px solid ${color}30`,
+            border: `1px solid ${color}40`,
           }}
         >
-          <Icon size={20} style={{ color }} />
+          <Icon size={24} style={{ color }} />
         </div>
 
         {/* Content */}
-        <h3 className="text-white font-display font-medium text-sm mb-1.5">
+        <h3 className="text-mono-black font-display font-semibold text-sm mb-2">
           {name}
         </h3>
-        <p className="text-accent-dim text-xs leading-relaxed">{description}</p>
+        <p className="text-accent text-xs leading-relaxed">{description}</p>
 
         {/* Hover Indicator */}
         <motion.div

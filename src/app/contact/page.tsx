@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiSend, FiMail, FiMapPin, FiGithub, FiLinkedin } from "react-icons/fi";
-import { SectionHeading, Button } from "@/components/ui";
+import { SectionHeading, Button, CTASection } from "@/components/ui";
 
 const contactInfo = [
   {
@@ -186,7 +186,7 @@ export default function ContactPage() {
               className="lg:col-span-5"
             >
               <div className="mb-10">
-                <h3 className="text-2xl font-display font-bold text-white mb-4">
+                <h3 className="text-2xl font-display font-bold text-mono-black mb-4">
                   Get In Touch
                 </h3>
                 <p className="text-accent-dim leading-relaxed">
@@ -204,7 +204,7 @@ export default function ContactPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex items-start gap-4"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-lg bg-mono-grey-100 border border-mono-grey-200 flex items-center justify-center flex-shrink-0">
                       <item.icon size={20} className="text-accent" />
                     </div>
                     <div>
@@ -214,12 +214,14 @@ export default function ContactPage() {
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="text-white font-medium hover:text-accent-silver transition-colors"
+                          className="text-mono-black font-medium hover:text-accent-dim transition-colors"
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-white font-medium">{item.value}</p>
+                        <p className="text-mono-black font-medium">
+                          {item.value}
+                        </p>
                       )}
                     </div>
                   </motion.div>
@@ -228,7 +230,7 @@ export default function ContactPage() {
 
               {/* Social Links */}
               <div>
-                <p className="text-accent-dim text-sm mb-4">Find me on</p>
+                <p className="text-accent text-sm mb-4">Find me on</p>
                 <div className="flex gap-3">
                   {socialLinks.map((item) => (
                     <motion.a
@@ -238,7 +240,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent hover:text-white hover:border-white/20 transition-colors"
+                      className="w-12 h-12 rounded-lg bg-mono-grey-100 border border-mono-grey-200 flex items-center justify-center text-accent hover:text-mono-black hover:border-accent transition-colors"
                     >
                       <item.icon size={20} />
                     </motion.a>
@@ -251,11 +253,11 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="mt-10 p-6 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl"
+                className="mt-10 p-6 bg-mono-grey-50 border border-mono-grey-200 rounded-lg"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                  <span className="text-white font-medium">
+                  <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                  <span className="text-mono-black font-medium">
                     Currently Available
                   </span>
                 </div>
@@ -273,16 +275,16 @@ export default function ContactPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="lg:col-span-7"
             >
-              <div className="p-8 bg-white/[0.03] border border-white/10 rounded-2xl">
+              <div className="p-8 bg-mono-white border border-mono-grey-200 rounded-lg shadow-lg">
                 {isSubmitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12"
                   >
-                    <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
+                    <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-6">
                       <svg
-                        className="w-8 h-8 text-green-400"
+                        className="w-8 h-8 text-green-600"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -295,7 +297,7 @@ export default function ContactPage() {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-display font-bold text-white mb-2">
+                    <h3 className="text-2xl font-display font-bold text-mono-black mb-2">
                       Message Sent!
                     </h3>
                     <p className="text-accent-dim">
@@ -501,9 +503,9 @@ export default function ContactPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="p-6 bg-white/5 border border-white/10 rounded-xl hover:border-white/20 transition-colors"
+                    className="p-6 bg-mono-white border border-mono-grey-200 rounded-lg hover:border-accent hover:shadow-lg transition-all"
                   >
-                    <h3 className="text-white font-display font-medium text-lg mb-2">
+                    <h3 className="text-mono-black font-display font-medium text-lg mb-2">
                       {faq.question}
                     </h3>
                     <p className="text-accent-dim text-sm leading-relaxed">
@@ -516,6 +518,15 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection
+        title="Let's Start a Conversation"
+        description="Ready to discuss your project? Fill out the form above or reach out directly. I typically respond within 24 hours."
+        buttonText="View My Work"
+        buttonHref="/projects"
+        variant="dark"
+      />
     </>
   );
 }

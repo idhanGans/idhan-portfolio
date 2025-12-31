@@ -41,7 +41,7 @@ export default function Navigation() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-primary-dark/80 backdrop-blur-lg border-b border-white/5"
+            ? "bg-mono-white/95 backdrop-blur-lg border-b border-mono-grey-200 shadow-sm"
             : "bg-transparent"
         }`}
       >
@@ -70,8 +70,8 @@ export default function Navigation() {
                     <span
                       className={`text-sm font-medium transition-colors ${
                         pathname === item.href
-                          ? "text-white"
-                          : "text-accent-dim hover:text-white"
+                          ? "text-mono-black"
+                          : "text-accent hover:text-mono-black"
                       }`}
                     >
                       {item.name}
@@ -79,7 +79,7 @@ export default function Navigation() {
                     {pathname === item.href && (
                       <motion.div
                         layoutId="activeNav"
-                        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full"
+                        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-mono-black rounded-full"
                         transition={{
                           type: "spring",
                           stiffness: 380,
@@ -87,7 +87,7 @@ export default function Navigation() {
                         }}
                       />
                     )}
-                    <div className="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
+                    <div className="absolute inset-0 bg-mono-grey-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
                   </motion.div>
                 </Link>
               ))}
@@ -99,7 +99,7 @@ export default function Navigation() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-5 py-2.5 bg-white text-primary-dark font-medium text-sm rounded-lg hover:bg-accent-silver transition-colors"
+                  className="px-5 py-2.5 bg-mono-black text-mono-white font-medium text-sm rounded-lg hover:bg-mono-charcoal transition-colors"
                 >
                   Let&apos;s Talk
                 </motion.button>
@@ -110,7 +110,7 @@ export default function Navigation() {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+              className="md:hidden p-2 text-mono-black hover:bg-mono-grey-100 rounded-lg transition-colors"
             >
               {isOpen ? <HiX size={24} /> : <HiMenuAlt4 size={24} />}
             </motion.button>
@@ -133,7 +133,7 @@ export default function Navigation() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="absolute inset-0 bg-primary-dark/90 backdrop-blur-lg"
+              className="absolute inset-0 bg-mono-black/80 backdrop-blur-lg"
             />
 
             {/* Menu Content */}
@@ -142,7 +142,7 @@ export default function Navigation() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 bottom-0 w-72 bg-secondary border-l border-white/10 p-6 pt-24"
+              className="absolute right-0 top-0 bottom-0 w-72 bg-mono-white border-l border-mono-grey-200 p-6 pt-24 shadow-xl"
             >
               <div className="flex flex-col gap-2">
                 {navItems.map((item, index) => (
@@ -156,8 +156,8 @@ export default function Navigation() {
                       <div
                         className={`px-4 py-3 rounded-lg transition-colors ${
                           pathname === item.href
-                            ? "bg-white/10 text-white"
-                            : "text-accent-dim hover:text-white hover:bg-white/5"
+                            ? "bg-mono-grey-100 text-mono-black"
+                            : "text-accent hover:text-mono-black hover:bg-mono-grey-50"
                         }`}
                       >
                         <span className="font-medium">{item.name}</span>
@@ -174,7 +174,7 @@ export default function Navigation() {
                 className="mt-8"
               >
                 <Link href="/contact">
-                  <button className="w-full px-5 py-3 bg-white text-primary-dark font-medium rounded-lg hover:bg-accent-silver transition-colors">
+                  <button className="w-full px-5 py-3 bg-mono-black text-mono-white font-medium rounded-lg hover:bg-mono-charcoal transition-colors">
                     Let&apos;s Talk
                   </button>
                 </Link>

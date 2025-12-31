@@ -10,22 +10,31 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#ffffff",
-          dark: "#0a0a0a",
+          DEFAULT: "#FFFFFF",
+          dark: "#0F0F0F",
         },
         secondary: {
-          DEFAULT: "#1a1a1a",
-          light: "#2a2a2a",
+          DEFAULT: "#1A1A1A",
+          light: "#2A2A2A",
         },
         accent: {
-          DEFAULT: "#c0c0c0",
-          silver: "#e8e8e8",
+          DEFAULT: "#B0B0B0",
+          silver: "#E0E0E0",
           dim: "#808080",
+          light: "#C8C8C8",
         },
-        nebula: {
-          purple: "#4a1c6b",
-          blue: "#1a3a5c",
-          pink: "#6b1c4a",
+        mono: {
+          black: "#0F0F0F",
+          charcoal: "#1A1A1A",
+          grey: {
+            50: "#FAFAFA",
+            100: "#F5F5F5",
+            200: "#E0E0E0",
+            300: "#C8C8C8",
+            400: "#B0B0B0",
+            500: "#808080",
+          },
+          white: "#FFFFFF",
         },
       },
       fontFamily: {

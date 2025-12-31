@@ -4,31 +4,32 @@
 
 @layer base {
   :root {
-    --background: 10 10 10;
-    --foreground: 255 255 255;
+    --background: 255 255 255;
+    --foreground: 15 15 15;
     --primary: 255 255 255;
     --secondary: 26 26 26;
-    --accent: 192 192 192;
-    --muted: 128 128 128;
+    --accent: 176 176 176;
+    --muted: 224 224 224;
   }
 
   * {
-    @apply border-white/10;
+    @apply border-mono-grey-200;
   }
 
   html {
     @apply scroll-smooth;
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    scrollbar-color: rgba(15, 15, 15, 0.15) transparent;
   }
 
   body {
-    @apply bg-primary-dark text-white antialiased;
+    @apply bg-mono-white text-mono-black antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    letter-spacing: -0.01em;
   }
 
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-track {
@@ -36,50 +37,59 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
+    background: rgba(15, 15, 15, 0.15);
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(15, 15, 15, 0.25);
   }
 
   ::selection {
-    @apply bg-white/20 text-white;
+    @apply bg-mono-black text-mono-white;
   }
 }
 
 @layer components {
   .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+    @apply bg-mono-white/95 backdrop-blur-lg border border-mono-grey-200;
+    box-shadow: 0 1px 3px 0 rgba(15, 15, 15, 0.05);
   }
 
   .glass-hover {
-    @apply hover:bg-white/10 hover:border-white/20 transition-all duration-300;
+    @apply hover:border-mono-grey-300 transition-all duration-300;
+    box-shadow: 0 2px 6px 0 rgba(15, 15, 15, 0.08);
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-accent-silver to-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-mono-black via-accent to-accent-dim;
   }
 
   .text-gradient-animated {
-    @apply text-white;
+    @apply text-mono-black;
   }
 
   .glow-text {
-    text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+    text-shadow: none;
   }
 
   .glow-box {
-    box-shadow: 0 0 60px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(15, 15, 15, 0.08);
   }
 
   .section-container {
-    @apply max-w-7xl mx-auto px-6;
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
   }
 
   .card {
-    @apply p-6 rounded-2xl glass glass-hover;
+    @apply p-6 lg:p-8 rounded-lg bg-mono-white border border-mono-grey-200;
+    box-shadow: 0 1px 3px 0 rgba(15, 15, 15, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 12px 0 rgba(15, 15, 15, 0.08);
+    border-color: rgba(176, 176, 176, 0.3);
   }
 
   .link-underline {
@@ -88,7 +98,7 @@
 
   .link-underline::after {
     content: "";
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300;
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-mono-black transition-all duration-300;
   }
 
   .link-underline:hover::after {
@@ -96,19 +106,19 @@
   }
 
   .input-field {
-    @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-accent-dim focus:outline-none focus:border-white/30 transition-colors;
+    @apply w-full px-4 py-3 bg-mono-grey-50 border border-mono-grey-200 rounded-lg text-mono-black placeholder-accent-dim focus:outline-none focus:border-accent transition-colors;
   }
 
   .input-field:focus {
-    @apply ring-2 ring-white/10;
+    @apply ring-1 ring-accent;
   }
 
   .badge {
-    @apply inline-flex items-center px-3 py-1 text-xs font-medium bg-white/5 border border-white/10 rounded-full text-accent;
+    @apply inline-flex items-center px-3 py-1.5 text-xs font-medium bg-mono-grey-100 border border-mono-grey-200 rounded-full text-mono-black;
   }
 
   .section-divider {
-    @apply w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    @apply w-full h-px bg-gradient-to-r from-transparent via-mono-grey-200 to-transparent;
   }
 }
 

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
-import { SectionHeading, ExperienceCard, Button } from "@/components/ui";
+import { SectionHeading, ExperienceCard, CTASection } from "@/components/ui";
 import { experiences } from "@/lib/data";
 
 const education = [
@@ -43,7 +43,7 @@ export default function ExperiencePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-1 bg-mono-white">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export default function ExperiencePage() {
       </section>
 
       {/* Experience Timeline */}
-      <section className="pb-24 lg:pb-32">
+      <section className="pb-24 lg:pb-32 bg-mono-white">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             {experiences.map((experience, index) => (
@@ -80,7 +80,7 @@ export default function ExperiencePage() {
       </div>
 
       {/* Education Section */}
-      <section className="py-24 lg:py-32">
+      <section className="py-24 lg:py-32 bg-mono-grey-50">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -90,7 +90,7 @@ export default function ExperiencePage() {
               transition={{ duration: 0.6 }}
               className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-mono-black mb-4">
                 Education
               </h2>
             </motion.div>
@@ -103,19 +103,21 @@ export default function ExperiencePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="p-8 bg-white/5 border border-white/10 rounded-xl hover:border-white/20 transition-colors"
+                  className="p-8 bg-mono-white border border-mono-grey-200 rounded-lg hover:border-accent hover:shadow-lg transition-all"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                     <div>
-                      <h3 className="text-xl font-display font-semibold text-white mb-1">
+                      <h3 className="text-xl font-display font-semibold text-mono-black mb-1">
                         {edu.degree}
                       </h3>
-                      <p className="text-accent mb-2">{edu.institution}</p>
+                      <p className="text-mono-black font-medium mb-2">
+                        {edu.institution}
+                      </p>
                       <p className="text-accent-dim text-sm">
                         {edu.description}
                       </p>
                     </div>
-                    <span className="text-accent-dim text-sm font-mono whitespace-nowrap">
+                    <span className="text-accent text-sm font-mono whitespace-nowrap">
                       {edu.period}
                     </span>
                   </div>
@@ -127,7 +129,7 @@ export default function ExperiencePage() {
       </section>
 
       {/* Certifications Section */}
-      <section className="py-24 lg:py-32 border-t border-white/10">
+      <section className="py-24 lg:py-32 border-t border-mono-grey-200 bg-mono-white">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -137,7 +139,7 @@ export default function ExperiencePage() {
               transition={{ duration: 0.6 }}
               className="mb-12"
             >
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-mono-black mb-4">
                 Certifications
               </h2>
             </motion.div>
@@ -150,12 +152,12 @@ export default function ExperiencePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="p-6 bg-white/5 border border-white/10 rounded-xl hover:border-white/20 transition-colors"
+                  className="p-6 bg-mono-white border border-mono-grey-200 rounded-lg hover:border-accent hover:shadow-lg transition-all"
                 >
-                  <p className="text-accent-dim text-xs font-mono mb-2">
+                  <p className="text-accent text-xs font-mono mb-2">
                     {cert.date}
                   </p>
-                  <h3 className="text-white font-display font-medium mb-2">
+                  <h3 className="text-mono-black font-display font-medium mb-2">
                     {cert.name}
                   </h3>
                   <p className="text-accent-dim text-sm">{cert.issuer}</p>
@@ -167,30 +169,12 @@ export default function ExperiencePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 lg:py-32 border-t border-white/10">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-              Ready to Work Together?
-            </h2>
-            <p className="text-accent-dim text-lg mb-8">
-              I&apos;m currently open to new opportunities and exciting
-              projects. Let&apos;s create something amazing together.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact">
-                <Button icon={<FiArrowRight size={16} />}>Get In Touch</Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CTASection
+        title="Ready to Work Together?"
+        description="I'm currently open to new opportunities and exciting projects. Let's create something amazing together."
+        buttonText="Get In Touch"
+        variant="dark"
+      />
     </>
   );
 }

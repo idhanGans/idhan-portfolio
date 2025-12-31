@@ -44,13 +44,13 @@ export default function SectionHeading({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-accent text-sm font-mono uppercase tracking-widest mb-3"
+          className="text-accent text-sm font-mono uppercase tracking-widest mb-4"
         >
           {subtitle}
         </motion.span>
       )}
       <h2
-        className={`text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white ${alignClass}`}
+        className={`text-3xl md:text-4xl lg:text-5xl font-display font-bold text-mono-black ${alignClass}`}
       >
         {title}
       </h2>

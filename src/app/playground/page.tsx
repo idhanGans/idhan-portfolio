@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FiExternalLink, FiGithub, FiCode } from "react-icons/fi";
-import { SectionHeading } from "@/components/ui";
+import { SectionHeading, CTASection } from "@/components/ui";
 
 const experiments = [
   {
@@ -214,9 +214,9 @@ export default function PlaygroundPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="p-6 bg-white/5 border border-white/10 rounded-xl"
+                    className="p-6 bg-mono-white border border-mono-grey-200 rounded-lg hover:border-accent hover:shadow-lg transition-all"
                   >
-                    <h3 className="text-white font-display font-medium mb-2">
+                    <h3 className="text-mono-black font-display font-medium mb-2">
                       {item.title}
                     </h3>
                     <p className="text-accent-dim text-sm">
@@ -229,6 +229,14 @@ export default function PlaygroundPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection
+        title="Let's Create Something Unique"
+        description="Interested in collaborating on an experimental project or want to bring a creative vision to life? I'm always excited to push boundaries."
+        buttonText="Discuss Your Idea"
+        variant="dark"
+      />
     </>
   );
 }

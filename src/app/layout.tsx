@@ -13,8 +13,8 @@ import { Navigation, Footer } from "@/components/ui";
 const Scene = dynamic(() => import("@/components/three/Scene"), {
   ssr: false,
   loading: () => (
-    <div className="fixed inset-0 bg-primary-dark z-0">
-      <div className="absolute inset-0 bg-gradient-radial from-secondary via-primary-dark to-primary-dark opacity-50" />
+    <div className="fixed inset-0 bg-mono-white z-0">
+      <div className="absolute inset-0 bg-gradient-radial from-mono-grey-100 via-mono-white to-mono-white opacity-50" />
     </div>
   ),
 });

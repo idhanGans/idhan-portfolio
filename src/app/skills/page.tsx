@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { SectionHeading, SkillCard } from "@/components/ui";
+import { SectionHeading, SkillCard, CTASection } from "@/components/ui";
 import { skills, skillCategories } from "@/lib/data";
 
 export default function SkillsPage() {
@@ -45,8 +45,8 @@ export default function SkillsPage() {
                 whileTap={{ scale: 0.98 }}
                 className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
                   activeCategory === category.id
-                    ? "bg-white text-primary-dark"
-                    : "bg-white/5 text-accent border border-white/10 hover:border-white/20"
+                    ? "bg-mono-black text-mono-white"
+                    : "bg-mono-grey-100 text-mono-black border border-mono-grey-200 hover:border-accent"
                 }`}
               >
                 {category.name}
@@ -194,7 +194,7 @@ export default function SkillsPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-mono-black mb-6">
                 Currently Exploring
               </h2>
               <p className="text-accent-dim text-lg mb-8">
@@ -212,7 +212,7 @@ export default function SkillsPage() {
                 ].map((item) => (
                   <span
                     key={item}
-                    className="px-4 py-2 bg-gradient-to-r from-white/10 to-white/5 border border-white/10 rounded-lg text-white text-sm font-medium"
+                    className="px-4 py-2 bg-mono-grey-100 border border-mono-grey-200 rounded-lg text-mono-black text-sm font-medium hover:border-accent transition-colors"
                   >
                     {item}
                   </span>
@@ -222,6 +222,9 @@ export default function SkillsPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection variant="dark" />
     </>
   );
 }

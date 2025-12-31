@@ -33,7 +33,7 @@ export default function ProjectCard({
       transition={{ delay: index * 0.1, duration: 0.6 }}
       className={`group relative ${featured ? "md:col-span-2" : ""}`}
     >
-      <div className="relative rounded-xl overflow-hidden bg-white/[0.03] border border-white/10 hover:border-white/20 transition-all duration-500">
+      <div className="relative rounded-lg overflow-hidden bg-mono-white border border-mono-grey-200 hover:border-accent transition-all duration-500 hover:shadow-lg">
         {/* Image Container */}
         <div
           className={`relative overflow-hidden ${
@@ -47,7 +47,7 @@ export default function ProjectCard({
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-mono-black/80 via-mono-black/30 to-transparent opacity-50 group-hover:opacity-30 transition-opacity duration-500" />
 
           {/* Links */}
           <div className="absolute top-4 right-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
@@ -58,7 +58,7 @@ export default function ProjectCard({
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 rounded-lg bg-primary-dark/80 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary-dark transition-colors"
+                className="w-10 h-10 rounded-lg bg-mono-white/95 backdrop-blur-sm border border-mono-grey-300 flex items-center justify-center text-mono-black hover:bg-mono-black hover:text-mono-white transition-colors"
               >
                 <FiGithub size={18} />
               </motion.a>
@@ -70,7 +70,7 @@ export default function ProjectCard({
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 rounded-lg bg-primary-dark/80 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary-dark transition-colors"
+                className="w-10 h-10 rounded-lg bg-mono-white/95 backdrop-blur-sm border border-mono-grey-300 flex items-center justify-center text-mono-black hover:bg-mono-black hover:text-mono-white transition-colors"
               >
                 <FiExternalLink size={18} />
               </motion.a>
@@ -80,7 +80,7 @@ export default function ProjectCard({
           {/* Featured Badge */}
           {featured && (
             <div className="absolute top-4 left-4">
-              <span className="px-3 py-1 text-xs font-medium bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white">
+              <span className="px-3 py-1 text-xs font-medium bg-mono-white/95 backdrop-blur-sm border border-mono-grey-300 rounded-full text-mono-black">
                 Featured Project
               </span>
             </div>
@@ -88,11 +88,11 @@ export default function ProjectCard({
         </div>
 
         {/* Content */}
-        <div className="p-3">
-          <h3 className="text-base font-display font-semibold text-white mb-1 group-hover:text-accent-silver transition-colors">
+        <div className="p-5">
+          <h3 className="text-base font-display font-semibold text-mono-black mb-2 group-hover:text-accent-dim transition-colors">
             {title}
           </h3>
-          <p className="text-accent-dim text-xs leading-relaxed mb-2 line-clamp-2">
+          <p className="text-accent text-sm leading-relaxed mb-3 line-clamp-2">
             {description}
           </p>
 
@@ -101,7 +101,7 @@ export default function ProjectCard({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 text-xs font-medium bg-white/5 border border-white/10 rounded-full text-accent"
+                className="px-3 py-1 text-xs font-medium bg-mono-grey-50 border border-mono-grey-200 rounded-full text-mono-black"
               >
                 {tag}
               </span>
@@ -115,7 +115,7 @@ export default function ProjectCard({
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent-silver via-accent to-transparent origin-left"
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent via-accent-silver to-transparent origin-left"
         />
       </div>
     </motion.div>
