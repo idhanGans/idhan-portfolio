@@ -60,7 +60,7 @@ export const skills = [
     description:
       "Full-stack React framework with SSR, SSG, and edge capabilities.",
     icon: SiNextdotjs,
-    color: "#ffffff",
+    color: "#0F0F0F",
     category: "frontend",
   },
   {
@@ -97,7 +97,7 @@ export const skills = [
     name: "Express.js",
     description: "Minimalist web framework for Node.js backend services.",
     icon: SiExpress,
-    color: "#ffffff",
+    color: "#000000",
     category: "backend",
   },
   {
@@ -134,7 +134,7 @@ export const skills = [
     name: "Vercel",
     description: "Edge deployment platform optimized for frontend frameworks.",
     icon: SiVercel,
-    color: "#ffffff",
+    color: "#0F0F0F",
     category: "deployment",
   },
   {
@@ -164,7 +164,7 @@ export const skills = [
     description:
       "All-in-one workspace for notes, databases, and documentation.",
     icon: SiNotion,
-    color: "#ffffff",
+    color: "#0F0F0F",
     category: "tools",
   },
   {

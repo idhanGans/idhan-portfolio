@@ -15,7 +15,7 @@ export default function SkillCard({
   name,
   description,
   icon: Icon,
-  color = "#ffffff",
+  color = "#4B5563",
   index = 0,
 }: SkillCardProps) {
   return (

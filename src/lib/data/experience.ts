@@ -1,8 +1,8 @@
 export const experiences = [
   {
-    title: "Senior Front End Developer",
+    title: "Senior Full-Stack Developer",
     company: "Tech Innovations Inc.",
-    location: "Malang, Indonesia",
+    location: "Leipzig, Germany",
     period: "2023 - Present",
     current: true,
     description: [

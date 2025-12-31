@@ -14,8 +14,6 @@ export const projects = [
       "TailwindCSS",
       "NextAuth",
     ],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/idhanGans",
     featured: true,
     category: "fullstack",
   },
@@ -27,8 +25,6 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=800&fit=crop&q=80",
     tags: ["React", "Node.js", "PostgreSQL", "Chart.js", "TailwindCSS"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/idhanGans",
     featured: false,
     category: "fullstack",
   },
@@ -40,8 +36,6 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
     tags: ["Vue.js", "Firebase", "Vuetify", "WebSocket"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/idhanGans",
     featured: false,
     category: "frontend",
   },
@@ -53,8 +47,6 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
     tags: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/idhanGans",
     featured: true,
     category: "fullstack",
   },
@@ -66,8 +58,6 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=600&fit=crop",
     tags: ["React Native", "TypeScript", "OpenWeather API"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/idhanGans",
     featured: false,
     category: "mobile",
   },
@@ -79,10 +69,19 @@ export const projects = [
     image:
       "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop",
     tags: ["Next.js", "MDX", "Prisma", "Vercel"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/idhanGans",
     featured: false,
     category: "fullstack",
+  },
+  {
+    id: "architect-portfolio",
+    title: "Architect Studio Portfolio",
+    description:
+      "A stunning portfolio website for an architecture firm showcasing residential and commercial projects. Features an immersive image gallery, interactive 3D floor plans, project filtering by type and location, and a custom CMS for easy content updates. Built with smooth animations and optimized for high-resolution imagery.",
+    image:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&h=800&fit=crop&q=80",
+    tags: ["Next.js", "Three.js", "Framer Motion", "Sanity CMS", "TailwindCSS"],
+    featured: false,
+    category: "frontend",
   },
 ];
 
