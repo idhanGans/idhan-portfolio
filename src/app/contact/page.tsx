@@ -208,9 +208,7 @@ export default function ContactPage() {
                       <item.icon size={20} className="text-mono-black" />
                     </div>
                     <div>
-                      <p className="text-accent text-sm mb-1">
-                        {item.label}
-                      </p>
+                      <p className="text-accent text-sm mb-1">{item.label}</p>
                       {item.href ? (
                         <a
                           href={item.href}
