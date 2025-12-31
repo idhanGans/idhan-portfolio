@@ -127,8 +127,8 @@ export default function AboutPage() {
 
                 <p className="text-accent-dim leading-relaxed mb-6">
                   Driven by a passion for technology, I am currently leveraging
-                  my problem-solving and strategic planning skills as a Junior
-                  Web Developer specializing in the Front-End. My approach to
+                  my problem-solving and strategic planning skills as a Web
+                  Developer specializing in the Front-End. My approach to
                   development is unique: I do not just write code; I build
                   solutions that are technically robust and perfectly aligned
                   with core business objectives and operational efficiency.
@@ -221,7 +221,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
                   {
-                    title: "Junior Web Developer",
+                    title: "Front-End Developer",
                     description:
                       "High-performance UI with React.js, AI tool integration, and optimized code development.",
                   },
