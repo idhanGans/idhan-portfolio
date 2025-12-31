@@ -34,7 +34,7 @@ export default function CTASection({
           const randomY = Math.random() * 100;
           const randomDelay = Math.random() * 3;
           const randomDuration = 4 + Math.random() * 4;
-          
+
           return (
             <motion.div
               key={i}

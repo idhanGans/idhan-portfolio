@@ -16,7 +16,7 @@ export default function SkillsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
+      <section className=\"pt-32 pb-16 lg:pt-40 lg:pb-24 bg-mono-white\">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

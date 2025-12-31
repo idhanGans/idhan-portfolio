@@ -33,7 +33,7 @@ export default function ProjectCard({
       transition={{ delay: index * 0.1, duration: 0.6 }}
       className={`group relative ${featured ? "md:col-span-2" : ""}`}
     >
-      <div className="relative rounded-lg overflow-hidden bg-mono-white border border-mono-grey-200 hover:border-accent transition-all duration-500 hover:shadow-lg">
+      <div className="relative rounded-lg overflow-hidden bg-mono-white border border-mono-grey-200 hover:border-accent transition-all duration-500 shadow-md hover:shadow-2xl">
         {/* Image Container */}
         <div
           className={`relative overflow-hidden ${

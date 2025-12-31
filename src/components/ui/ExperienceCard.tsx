@@ -42,7 +42,7 @@ export default function ExperienceCard({
       />
 
       {/* Content */}
-      <div className="group">
+      <div className="group p-4 rounded-lg transition-all duration-300 hover:bg-mono-grey-50 hover:shadow-lg">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-4">
           <div className="flex-1">

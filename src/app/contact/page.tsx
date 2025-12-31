@@ -158,7 +158,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-mono-white">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -175,7 +175,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="pb-24 lg:pb-32">
+      <section className="pb-24 lg:pb-32 bg-mono-white">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Contact Info */}
@@ -189,7 +189,7 @@ export default function ContactPage() {
                 <h3 className="text-2xl font-display font-bold text-mono-black mb-4">
                   Get In Touch
                 </h3>
-                <p className="text-accent-dim leading-relaxed">
+                <p className="text-accent leading-relaxed">
                   I&apos;m always interested in hearing about new projects,
                   creative ideas, or opportunities to be part of your vision.
                 </p>
@@ -205,10 +205,10 @@ export default function ContactPage() {
                     className="flex items-start gap-4"
                   >
                     <div className="w-12 h-12 rounded-lg bg-mono-grey-100 border border-mono-grey-200 flex items-center justify-center flex-shrink-0">
-                      <item.icon size={20} className="text-accent" />
+                      <item.icon size={20} className="text-mono-black" />
                     </div>
                     <div>
-                      <p className="text-accent-dim text-sm mb-1">
+                      <p className="text-accent text-sm mb-1">
                         {item.label}
                       </p>
                       {item.href ? (
@@ -322,7 +322,7 @@ export default function ContactPage() {
                       <div>
                         <label
                           htmlFor="name"
-                          className="block text-sm font-medium text-accent mb-2"
+                          className="block text-sm font-medium text-mono-black mb-2"
                         >
                           Name
                         </label>
@@ -350,7 +350,7 @@ export default function ContactPage() {
                       <div>
                         <label
                           htmlFor="email"
-                          className="block text-sm font-medium text-accent mb-2"
+                          className="block text-sm font-medium text-mono-black mb-2"
                         >
                           Email
                         </label>
@@ -380,7 +380,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="subject"
-                        className="block text-sm font-medium text-accent mb-2"
+                        className="block text-sm font-medium text-mono-black mb-2"
                       >
                         Subject
                       </label>
@@ -413,10 +413,10 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-sm font-medium text-accent mb-2"
+                        className="block text-sm font-medium text-mono-black mb-2"
                       >
                         Message
-                        <span className="text-accent-dim font-normal ml-2">
+                        <span className="text-accent font-normal ml-2">
                           ({formState.message.length}/5000)
                         </span>
                       </label>
@@ -461,7 +461,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 lg:py-32 border-t border-white/10">
+      <section className="py-24 lg:py-32 bg-mono-white border-t border-mono-grey-200">
         <div className="section-container">
           <div className="max-w-3xl mx-auto">
             <motion.div
@@ -470,7 +470,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-white text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-display font-bold text-mono-black text-center mb-12">
                 Frequently Asked Questions
               </h2>
 
@@ -503,12 +503,12 @@ export default function ContactPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="p-6 bg-mono-white border border-mono-grey-200 rounded-lg hover:border-accent hover:shadow-lg transition-all"
+                    className="p-6 bg-mono-grey-50 border border-mono-grey-200 rounded-lg hover:border-accent hover:shadow-lg transition-all"
                   >
                     <h3 className="text-mono-black font-display font-medium text-lg mb-2">
                       {faq.question}
                     </h3>
-                    <p className="text-accent-dim text-sm leading-relaxed">
+                    <p className="text-accent text-sm leading-relaxed">
                       {faq.answer}
                     </p>
                   </motion.div>

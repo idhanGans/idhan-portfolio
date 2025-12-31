@@ -83,13 +83,13 @@
 
   .card {
     @apply p-6 lg:p-8 rounded-lg bg-mono-white border border-mono-grey-200;
-    box-shadow: 0 1px 3px 0 rgba(15, 15, 15, 0.05);
+    box-shadow: 0 2px 8px 0 rgba(15, 15, 15, 0.06);
     transition: all 0.3s ease;
   }
 
   .card:hover {
-    box-shadow: 0 4px 12px 0 rgba(15, 15, 15, 0.08);
-    border-color: rgba(176, 176, 176, 0.3);
+    box-shadow: 0 12px 24px 0 rgba(15, 15, 15, 0.15);
+    border-color: rgba(75, 85, 99, 0.3);
   }
 
   .link-underline {

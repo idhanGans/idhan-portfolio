@@ -27,7 +27,7 @@ export default function SkillCard({
       whileHover={{ y: -4 }}
       className="group relative"
     >
-      <div className="relative p-5 lg:p-6 rounded-lg bg-mono-white border border-mono-grey-200 hover:border-accent transition-all duration-300 h-full hover:shadow-lg">
+      <div className="relative p-5 lg:p-6 rounded-lg bg-mono-white border border-mono-grey-200 hover:border-accent transition-all duration-300 h-full shadow-sm hover:shadow-xl">
         {/* Glow Effect */}
         <div
           className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"
