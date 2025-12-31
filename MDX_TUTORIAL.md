@@ -21,6 +21,7 @@
 MDX = **Markdown** + **JSX**
 
 It allows you to write your project content in Markdown (simple text formatting) while also embedding React components. Perfect for portfolio projects that need:
+
 - Rich text descriptions
 - Multiple images/galleries
 - Code snippets with syntax highlighting
@@ -31,6 +32,7 @@ It allows you to write your project content in Markdown (simple text formatting)
 ## Why Use MDX?
 
 **Current Approach (JSON):**
+
 ```typescript
 {
   id: "my-project",
@@ -41,6 +43,7 @@ It allows you to write your project content in Markdown (simple text formatting)
 ```
 
 **MDX Approach:**
+
 ```mdx
 ---
 title: My Project
@@ -51,6 +54,7 @@ featured: true
 # My Project
 
 A **rich** description with:
+
 - Multiple paragraphs
 - Formatting options
 - Image galleries
@@ -58,12 +62,14 @@ A **rich** description with:
 ```
 
 **Choose MDX when:**
+
 - ✅ You want detailed project case studies
 - ✅ You need multiple images per project
 - ✅ You want to show code snippets
 - ✅ You're comfortable with command line
 
 **Stick with JSON when:**
+
 - ✅ You want simplicity (current setup)
 - ✅ Quick 2-month updates
 - ✅ Short project descriptions are enough
@@ -84,70 +90,71 @@ npm install rehype-pretty-code shiki rehype-autolink-headings rehype-slug
 Create `contentlayer.config.ts` in your project root:
 
 ```typescript
-import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
 export const Project = defineDocumentType(() => ({
-  name: 'Project',
+  name: "Project",
   filePathPattern: `projects/**/*.mdx`,
-  contentType: 'mdx',
+  contentType: "mdx",
   fields: {
     title: {
-      type: 'string',
-      description: 'The title of the project',
+      type: "string",
+      description: "The title of the project",
       required: true,
     },
     date: {
-      type: 'date',
-      description: 'The date of the project',
+      type: "date",
+      description: "The date of the project",
       required: true,
     },
     description: {
-      type: 'string',
-      description: 'Short description for cards',
+      type: "string",
+      description: "Short description for cards",
       required: true,
     },
     image: {
-      type: 'string',
-      description: 'Main project image URL',
+      type: "string",
+      description: "Main project image URL",
       required: true,
     },
     tags: {
-      type: 'list',
-      of: { type: 'string' },
+      type: "list",
+      of: { type: "string" },
       required: true,
     },
     featured: {
-      type: 'boolean',
+      type: "boolean",
       default: false,
     },
     category: {
-      type: 'enum',
-      options: ['frontend', 'fullstack', 'mobile'],
+      type: "enum",
+      options: ["frontend", "fullstack", "mobile"],
       required: true,
     },
     liveUrl: {
-      type: 'string',
+      type: "string",
       required: false,
     },
     githubUrl: {
-      type: 'string',
+      type: "string",
       required: false,
     },
   },
   computedFields: {
     slug: {
-      type: 'string',
-      resolve: (doc) => doc._raw.flattenedPath.replace('projects/', ''),
+      type: "string",
+      resolve: (doc) => doc._raw.flattenedPath.replace("projects/", ""),
     },
     url: {
-      type: 'string',
-      resolve: (doc) => `/projects/${doc._raw.flattenedPath.replace('projects/', '')}`,
+      type: "string",
+      resolve: (doc) =>
+        `/projects/${doc._raw.flattenedPath.replace("projects/", "")}`,
     },
   },
 }));
 
 export default makeSource({
-  contentDirPath: './src/content',
+  contentDirPath: "./src/content",
   documentTypes: [Project],
 });
 ```
@@ -157,7 +164,7 @@ export default makeSource({
 Wrap your Next.js config with Contentlayer:
 
 ```javascript
-const { withContentlayer } = require('next-contentlayer');
+const { withContentlayer } = require("next-contentlayer");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -209,6 +216,7 @@ mkdir -p src/content/projects
 ```
 
 Your structure will look like:
+
 ```
 src/
   content/
@@ -226,7 +234,7 @@ src/
 
 Create `src/content/projects/my-awesome-project.mdx`:
 
-```mdx
+````mdx
 ---
 title: "My Awesome Project"
 date: "2024-12-31"
@@ -259,23 +267,26 @@ const myComponent = () => {
   return <div>Hello World</div>;
 };
 ```
+````
 
 ## Gallery
 
 ![Dashboard View](https://images.unsplash.com/photo-1...)
-*Main dashboard interface*
+_Main dashboard interface_
 
 ![Mobile View](https://images.unsplash.com/photo-2...)
-*Responsive mobile design*
+_Responsive mobile design_
 
 ## Challenges & Solutions
 
 ### Challenge 1: State Management
+
 We needed complex state management across multiple components.
 
 **Solution:** Implemented Zustand for lightweight, efficient state management.
 
 ### Challenge 2: Performance
+
 Initial load times were too slow.
 
 **Solution:** Added React Server Components and optimized images with Next.js Image component.
@@ -289,11 +300,13 @@ Initial load times were too slow.
 ## What I Learned
 
 This project taught me:
+
 1. Advanced TypeScript patterns
 2. Performance optimization techniques
 3. Building accessible UIs
 4. Working with modern React patterns
-```
+
+````
 
 ### Step 2: Update Projects Page
 
@@ -304,7 +317,7 @@ import { allProjects } from 'contentlayer/generated';
 
 export default function ProjectsPage() {
   // Sort by date, newest first
-  const sortedProjects = allProjects.sort((a, b) => 
+  const sortedProjects = allProjects.sort((a, b) =>
     new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
@@ -316,24 +329,24 @@ export default function ProjectsPage() {
     </div>
   );
 }
-```
+````
 
 ### Step 3: Create Project Detail Page (Optional)
 
 Create `src/app/projects/[slug]/page.tsx`:
 
 ```typescript
-import { allProjects } from 'contentlayer/generated';
-import { notFound } from 'next/navigation';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import { allProjects } from "contentlayer/generated";
+import { notFound } from "next/navigation";
+import { useMDXComponent } from "next-contentlayer/hooks";
 
-export default function ProjectDetailPage({ 
-  params 
-}: { 
-  params: { slug: string } 
+export default function ProjectDetailPage({
+  params,
+}: {
+  params: { slug: string };
 }) {
-  const project = allProjects.find(p => p.slug === params.slug);
-  
+  const project = allProjects.find((p) => p.slug === params.slug);
+
   if (!project) {
     notFound();
   }
@@ -364,7 +377,7 @@ export function generateStaticParams() {
 
 **File:** `src/content/projects/architect-studio.mdx`
 
-```mdx
+````mdx
 ---
 title: "Architect Studio Portfolio"
 date: "2024-11-20"
@@ -389,17 +402,22 @@ A stunning portfolio website for a modern architecture firm, featuring interacti
 ## ✨ Key Features
 
 ### Interactive 3D Models
+
 Integrated Three.js to allow clients to explore building designs in 3D space. Users can rotate, zoom, and inspect architectural details interactively.
 
 ### Project Gallery System
+
 Custom-built gallery component with:
+
 - Lightbox functionality
 - Smooth transitions between images
 - Touch gestures support for mobile
 - Lazy loading for performance
 
 ### Responsive Design
+
 The website adapts seamlessly across all devices:
+
 - Desktop: Full 3D experience with detailed navigation
 - Tablet: Optimized touch interactions
 - Mobile: Streamlined content with gesture controls
@@ -407,6 +425,7 @@ The website adapts seamlessly across all devices:
 ## 🛠️ Technical Implementation
 
 ### Frontend Stack
+
 ```typescript
 // Tech stack
 const techStack = {
@@ -417,8 +436,10 @@ const techStack = {
   language: 'TypeScript'
 };
 ```
+````
 
 ### Performance Optimizations
+
 - Image optimization using Next.js Image component
 - Lazy loading for 3D models
 - Code splitting for faster initial load
@@ -427,11 +448,12 @@ const techStack = {
 ### Key Code Snippets
 
 **3D Model Viewer Component:**
-```typescript
-'use client';
 
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+```typescript
+"use client";
+
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 
 export function ModelViewer({ modelUrl }: { modelUrl: string }) {
   return (
@@ -448,36 +470,42 @@ export function ModelViewer({ modelUrl }: { modelUrl: string }) {
 ## 📸 Project Gallery
 
 ![Homepage Hero](https://images.unsplash.com/photo-1503387762-592deb58ef4e)
-*Clean, minimalist homepage with hero section*
+_Clean, minimalist homepage with hero section_
 
 ![Project Grid](https://images.unsplash.com/photo-1487958449943-2429e8be8625)
-*Responsive project grid layout*
+_Responsive project grid layout_
 
 ![3D Model Viewer](https://images.unsplash.com/photo-1545324418-cc1a3fa10c00)
-*Interactive 3D model exploration*
+_Interactive 3D model exploration_
 
 ## 🚧 Challenges Overcome
 
 ### Challenge 1: 3D Model Performance
+
 **Problem:** Large 3D models caused performance issues on mobile devices.
 
-**Solution:** 
+**Solution:**
+
 - Implemented progressive loading
 - Created lower-poly versions for mobile
 - Added loading states and fallback images
 
 ### Challenge 2: Image Gallery UX
+
 **Problem:** Traditional galleries felt clunky and slow.
 
 **Solution:**
+
 - Built custom gallery with Framer Motion
 - Added predictive loading for next/previous images
 - Implemented keyboard navigation
 
 ### Challenge 3: Cross-browser Compatibility
+
 **Problem:** Three.js rendering inconsistencies across browsers.
 
 **Solution:**
+
 - Added feature detection
 - Provided 2D fallbacks for unsupported browsers
 - Extensive testing on Safari, Firefox, Chrome
@@ -508,26 +536,33 @@ export function ModelViewer({ modelUrl }: { modelUrl: string }) {
 ## Technologies Deep Dive
 
 ### Why Three.js?
+
 Three.js was chosen for its:
+
 - Robust 3D rendering capabilities
 - Large community and ecosystem
 - Excellent documentation
 - React integration via React Three Fiber
 
 ### Animation Strategy
+
 Used Framer Motion for:
+
 - Page transitions
 - Scroll-triggered animations
 - Micro-interactions
 - Gesture handling
 
 ### TypeScript Benefits
+
 TypeScript provided:
+
 - Type safety for complex 3D calculations
 - Better IDE autocomplete
 - Fewer runtime errors
 - Improved code documentation
-```
+
+````
 
 ---
 
@@ -541,20 +576,25 @@ TypeScript provided:
 ```bash
 npm uninstall contentlayer next-contentlayer
 npm install contentlayer@0.3.3 next-contentlayer@0.3.3 --legacy-peer-deps
-```
+````
 
 **Fix 2 - Manual path configuration:**
 Add to `next.config.js`:
+
 ```javascript
 webpack: (config) => {
-  config.resolve.alias['contentlayer/generated'] = path.resolve(__dirname, '.contentlayer/generated');
+  config.resolve.alias["contentlayer/generated"] = path.resolve(
+    __dirname,
+    ".contentlayer/generated"
+  );
   return config;
-}
+};
 ```
 
 ### Error: "Content directory not found"
 
 **Solution:** Ensure directory structure is correct:
+
 ```bash
 mkdir -p src/content/projects
 ```
@@ -564,6 +604,7 @@ mkdir -p src/content/projects
 **Cause:** Contentlayer hasn't generated files yet.
 
 **Solution:**
+
 ```bash
 # Clear cache and regenerate
 rm -rf .contentlayer .next
@@ -573,6 +614,7 @@ npm run dev
 ### MDX Images Not Loading
 
 **Solution:** Add image domain to `next.config.js`:
+
 ```javascript
 images: {
   domains: ['images.unsplash.com', 'your-domain.com'],
@@ -604,15 +646,16 @@ touch src/content/projects/new-project.mdx
 
 ## When to Use JSON vs MDX
 
-| Factor | JSON (Current) | MDX |
-|--------|----------------|-----|
-| Complexity | ⭐ Simple | ⭐⭐⭐ Advanced |
-| Setup Time | ✅ 0 minutes | ⏱️ 30 minutes |
-| Content Richness | Basic | Rich (images, code, formatting) |
-| Learning Curve | ✅ Easy | 📚 Moderate |
-| Best For | Quick updates | Detailed case studies |
+| Factor           | JSON (Current) | MDX                             |
+| ---------------- | -------------- | ------------------------------- |
+| Complexity       | ⭐ Simple      | ⭐⭐⭐ Advanced                 |
+| Setup Time       | ✅ 0 minutes   | ⏱️ 30 minutes                   |
+| Content Richness | Basic          | Rich (images, code, formatting) |
+| Learning Curve   | ✅ Easy        | 📚 Moderate                     |
+| Best For         | Quick updates  | Detailed case studies           |
 
 **Recommendation for your 2-month update cycle:**
+
 - **Now (Junior Dev):** Stick with JSON ✅
 - **In 6-12 months:** Consider MDX when comfortable 🚀
 
@@ -646,6 +689,7 @@ touch src/content/projects/new-project.mdx
 ## Your Current Setup
 
 You're currently using the **JSON approach** at [src/lib/data/projects.ts](src/lib/data/projects.ts), which is perfect for:
+
 - ✅ Quick updates every 2 months
 - ✅ Simple workflow
 - ✅ No build complexity
